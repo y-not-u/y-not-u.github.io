@@ -5,16 +5,16 @@ node_js:
 cache: npm
 branches:
   only:
-    - master # build master branch only
+    - main # build main branch only
 script:
   - hexo generate # generate static files
 deploy:
   provider: pages
-  repo: VoganWong/VoganWong.github.io
-  target_branch: master
+  repo: y-not-u/y-not-u.github.io
+  target_branch: main
   skip-cleanup: true
   github-token: $GH_TOKEN
   keep-history: true
   on:
-    branch: master
+    branch: main
   local-dir: public
