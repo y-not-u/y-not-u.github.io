@@ -99,4 +99,6 @@ theme: apollo
 deploy:
   type: 'git'
   repo: git@github.com:y-not-u/y-not-u.github.io.git
-  branch: master
+  branch: main
+  name: y-not-u
+  email: 102951988+y-not-u@users.noreply.github.com
