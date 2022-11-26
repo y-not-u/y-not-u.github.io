@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="zh-cn,en,default"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> ssl的那些事儿 · 王豆豆的博客</title><meta name="description" content="ssl的那些事儿 - Vogan"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://www.vatery.com/atom.xml" title="王豆豆的博客"><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="王豆豆的博客" type="application/atom+xml">
+</head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"><span class="title">王豆豆的博客</span></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/voganwong" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">ssl的那些事儿</h1><div class="post-info">2016年6月27日</div><div class="post-content"><h1 id="最近配置ssl的一些了解"><a href="#最近配置ssl的一些了解" class="headerlink" title="最近配置ssl的一些了解"></a>最近配置ssl的一些了解</h1><p>因为客户要求使用https来进行网站访问，考虑到传输安全的因素，我也去<a target="_blank" rel="noopener" href="https://www.ssls.com买了一个比较便宜的证书,从属于comodo./">https://www.ssls.com买了一个比较便宜的证书，从属于Comodo。</a></p>
+<blockquote>
+<p>SSL的证书需要由权威机构进行颁发。</p>
+<p>原因是，权威机构很权威，具有较高的资质和技术保障，相当于你为什么把钱存在中国银行，而不是别人的手中。</p>
+<p>如果某家机构违法了规定，任意或恶意颁发证书，那么这家机构的证书都可能会被不认同。例如沃通🤔。</p>
+</blockquote>
+<p>这是我目前的环境：</p>
+<ul>
+<li>CentOS 6.6</li>
+<li>Apache 2.2</li>
+<li>PHP 7.0.6</li>
+<li>MySQL  5.1</li>
+</ul>
+<ol>
+<li><p>在自己的服务器上产生自身的私钥和公钥</p>
+<p>(密钥长度至少为1024位，不建议4096。加密过度复杂，安全性会提高，但是相应的cpu计算量也会增大，如果你的机器配置较低，光加解密会消耗大量时间)。</p>
+</li>
+<li><p>然后生成根数字证书，并且将数字证书传输给证书商。</p>
+</li>
+<li><p>之后就能下载一个txt文件（文件名数字和英文混合），里面有一个随机的认证字符串和comodoca.com。</p>
+<p>把它放在通过域名后加文件名能直接访问到的公共目录下，便于认证服务器确认。</p>
+</li>
+<li><p>等待几分钟后，能在证书商那下载相应的证书，并上传至你的服务器。</p>
+</li>
+<li><p>在conf.d/ssl.conf中修改相应的证书位置。并重启Apache。</p>
+</li>
+<li><p>几分钟内就能生效。</p>
+</li>
+</ol>
+<p><em>P.S. 之中向ssls的客服请教了很多，服务态度很不错。</em></p>
+<h2 id="http向https跳转的问题"><a href="#http向https跳转的问题" class="headerlink" title="http向https跳转的问题"></a>http向https跳转的问题</h2><p>即80端口强制跳转到443端口，在服务端使用301状态码。</p>
+<p>因为我的是Apache服务端，所以用的自然是rewrite模块。</p>
+<p>可以</p>
+<ol>
+<li>通过http.conf（不建议）</li>
+<li>vhost中的配置</li>
+<li>站点根目录下的.htaccess修改</li>
+</ol>
+<p>推荐配置：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RewriteEngine on</span><br><span class="line">RewriteCond %&#123;HTTPS&#125; off</span><br><span class="line">RewriteRule ^ https://%&#123;HTTP_HOST&#125;%&#123;REQUEST_URI&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="upyun的CDN服务"><a href="#upyun的CDN服务" class="headerlink" title="upyun的CDN服务"></a>upyun的CDN服务</h2><p>如果你的站点使用了cdn，那么需要在cdn的服务商那上传你的证书，让服务商分发到各个边缘节点，用于缓存数据。</p>
+<p>否则无法使用https访问。</p>
+</div></article></div></main><footer><div class="paginator"><a href="/2016/07/05/%E7%BD%91%E7%AB%99%E8%BF%81%E7%A7%BB%E5%8F%8A%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/" class="prev">上一篇</a><a href="/2016/04/01/Linux%E5%AE%89%E5%85%A8%E6%94%BB%E9%98%B2%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/" class="next">下一篇</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'vatery';
+var disqus_identifier = '2016/06/26/ssl的那些事儿/';
+var disqus_title = 'ssl的那些事儿';
+var disqus_url = 'https://www.vatery.com/2016/06/26/ssl的那些事儿/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//vatery.disqus.com/count.js" async></script><div class="copyright"><p>© 2016 - 2022 <a href="https://www.vatery.com">Vogan</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-87375221-1",'auto');ga('send','pageview');</script></body></html>

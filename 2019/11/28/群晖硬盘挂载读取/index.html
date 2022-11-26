@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="zh-cn,en,default"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 群晖硬盘挂载读取 · 王豆豆的博客</title><meta name="description" content="群晖硬盘挂载读取 - Vogan"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://www.vatery.com/atom.xml" title="王豆豆的博客"><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="王豆豆的博客" type="application/atom+xml">
+</head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"><span class="title">王豆豆的博客</span></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/voganwong" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">群晖硬盘挂载读取</h1><div class="post-info">2019年11月29日</div><div class="post-content"><p><img src="https://ae01.alicdn.com/kf/H79e88ecdcd5141ec9cc0d25d3c42f2d6p.jpg"></p>
+<p><strong>买了新的硬盘，或者DSM系统暴毙了，资料怎么办？</strong></p>
+<span id="more"></span>
+
+<p>当然要取出来，给小姐姐搬个更温暖舒适的家。</p>
+<p>很正常的逻辑是，使用一个电脑，插上硬盘盒，将资料转入新的DSM系统。</p>
+<p>这里有两个问题：</p>
+<ol>
+<li>群晖的硬盘，由于做了raid处理，所以文件系统识别为<code>linux_raid</code>，默认情况是下是无法直接<code>mount</code>的，提示文件系统不能识别；</li>
+<li>Manjaro、ArchLinux等，虽然能正常运行读取raid配置信息命令，但无法读取到raid信息，提示<code>No arrays found in config file or automatically</code>，更换使用<em>Ubuntu</em>却可以。</li>
+</ol>
+<blockquote>
+<p> macOS下无法读取该硬盘，虽然已经识别。经过多方资料查找，也寻到了官方的说明<a target="_blank" rel="noopener" href="https://www.synology.com/zh-cn/knowledgebase/DSM/tutorial/Storage/How_can_I_recover_data_from_my_DiskStation_using_a_PC">文档</a>。手头正好有<em>Manjaro</em>，所以插入硬盘运行命令，但无法成功。</p>
+</blockquote>
+<p>所以，重点来了：<strong>需要制作一个Ubunut系统的U盘，进入Live CD模式</strong>，<em>terminal</em>中运行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo su <span class="comment"># 切换到root</span></span><br><span class="line">apt-get install -y mdadm lvm2 <span class="comment"># 安装mdadm raid管理软件</span></span><br><span class="line">mdadm -Asf &amp;&amp; vgchange -ay <span class="comment"># 读取raid信息并挂载</span></span><br></pre></td></tr></table></figure>
+
+<p>可以在<em>terminal</em>中使用scp同步到需要的系统上去。</p>
+</div></article></div></main><footer><div class="paginator"><a href="/2019/12/04/%E5%9C%A8Esxi%E4%B8%8A%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96%E7%B3%BB%E7%BB%9F/" class="prev">上一篇</a><a href="/2019/11/16/%E5%9C%A8macOS%E5%B9%B3%E5%8F%B0%E4%B8%8B%E7%9A%84%E9%AB%98%E6%95%88%E7%8E%87%E5%B7%A5%E4%BD%9C%E6%96%B9%E6%A1%88/" class="next">下一篇</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'vatery';
+var disqus_identifier = '2019/11/28/群晖硬盘挂载读取/';
+var disqus_title = '群晖硬盘挂载读取';
+var disqus_url = 'https://www.vatery.com/2019/11/28/群晖硬盘挂载读取/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//vatery.disqus.com/count.js" async></script><div class="copyright"><p>© 2016 - 2022 <a href="https://www.vatery.com">Vogan</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-87375221-1",'auto');ga('send','pageview');</script></body></html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="zh-cn,en,default"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 排序恶意请求的IP并在Nginx中Deny · 王豆豆的博客</title><meta name="description" content="排序恶意请求的IP并在Nginx中Deny - Vogan"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://www.vatery.com/atom.xml" title="王豆豆的博客"><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="王豆豆的博客" type="application/atom+xml">
+</head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"><span class="title">王豆豆的博客</span></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/voganwong" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">排序恶意请求的IP并在Nginx中Deny</h1><div class="post-info">2018年4月25日</div><div class="post-content"><h2 id="这是一个Shell脚本："><a href="#这是一个Shell脚本：" class="headerlink" title="这是一个Shell脚本："></a>这是一个Shell脚本：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line">cat /var/log/nginx/api.access.log| awk &#x27;&#123;print $3&#125;&#x27; | sort | uniq -c | sort -n | tail -n 100 | grep -v &#x27;-&#x27;| sed --expression=&#x27;s/,//g&#x27; |awk &#x27;&#123;if ($1&gt;300) print &quot;deny &quot; $2&quot;;&quot;&#125;&#x27; &gt;&gt; /etc/nginx/conf.d/deny.conf</span><br><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
+
+<p>这里简单的做下解释，用于替换你自己的参数。</p>
+<ul>
+<li><code>/var/log/nginx/api.access.log</code>：你的<code>access.log</code>位置，默认为<code>/var/log/nginx/access.log</code></li>
+<li><code>awk &#39;&#123;print $3&#125;&#39;</code>： 注意这里的<code>$3</code>，为我日志中配置的第三列<code>X-Forwarded-For </code>(用户IP, 代理服务器IP)。如果你没有自定义配置，和没有经过CDN，那么应该是第一列为用户IP，即<code>$1</code></li>
+<li><code>| sort | uniq -c | sort -n | tail -n 100</code>：排序，且只取100个请求量最大的</li>
+<li><code>grep -v &#39;-&#39;</code>：排除<code>-</code>有特殊符号的</li>
+<li><code>sed --expression=&#39;s/,//g&#39;</code>：去除<code>,</code>（因为CDN中可能有多级代理存在）</li>
+<li><code>awk &#39;&#123;if ($1&gt;300) print &quot;deny &quot; $2&quot;;&quot;&#125;&#39;</code>：取出请求量大于300的，并进行拼接格式为<code>deny 1.1.1.1;</code></li>
+<li><code>&gt;&gt; /etc/nginx/conf.d/deny.conf</code>：追加写入到你的ngxin.conf能都读取到的文件</li>
+<li><code>nginx -s reload</code>：重启Nginx😎</li>
+</ul>
+<h2 id="CND-amp-Real-IP"><a href="#CND-amp-Real-IP" class="headerlink" title="CND &amp; Real IP"></a>CND &amp; Real IP</h2><ol>
+<li><p>Nginx在CND后，获取real ip：</p>
+<p>正常CND会在Header里留存一个键用来放Client IP，一般为<code>X-Forwarded-For</code>。所以在Nginx的log_format中的参数为<code>$http_x_forwarded_for</code>，即可在日志中记录真实IP。</p>
+</li>
+<li><p>deny的时候不起作用？</p>
+<p>原因是，Nginx默认拿到的IP不是你认为的Client IP，所以你需要指定</p>
+<p><code>real_ip_header X-Forwarded-For;</code></p>
+<p><code>set_real_ip_from 0.0.0.0/0;</code></p>
+<p>注意下面的一句很重要，缺少也不可获取real ip。</p>
+<p>​</p>
+</li>
+</ol>
+</div></article></div></main><footer><div class="paginator"><a href="/2018/05/04/Zabbix-3.4-monitoring-MySQL/" class="prev">上一篇</a><a href="/2018/04/08/Lissh%E5%9F%BA%E4%BA%8EAlfred3%E7%9A%84%E5%BF%AB%E6%8D%B7ssh%E8%BF%9E%E6%8E%A5/" class="next">下一篇</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'vatery';
+var disqus_identifier = '2018/04/24/nginx-auto-deny-ip/';
+var disqus_title = '排序恶意请求的IP并在Nginx中Deny';
+var disqus_url = 'https://www.vatery.com/2018/04/24/nginx-auto-deny-ip/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//vatery.disqus.com/count.js" async></script><div class="copyright"><p>© 2016 - 2022 <a href="https://www.vatery.com">Vogan</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-87375221-1",'auto');ga('send','pageview');</script></body></html>
