@@ -1,0 +1,20 @@
+menu:
+    Blog: /
+    Archive: /archives/
+    #Weibo: xxx
+    GitHub: https://github.com/voganwong
+    Rss: /atom.xml
+
+favicon: /favicon.png
+logo: /favicon.png
+
+# Comment
+disqus: vatery
+# duoshuo:
+
+# Analytics
+google-analytics:
+ga: UA-87375221-1
+
+# Copyright Infomation
+startyear: 2016
