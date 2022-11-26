@@ -98,5 +98,5 @@ theme: apollo
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: 'git'
-  repo: git@github.com:VoganWong/VoganWong.github.io.git
+  repo: git@github.com:y-not-u/y-not-u.github.io.git
   branch: master
