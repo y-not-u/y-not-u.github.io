@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="zh-cn,en,default"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 网站迁移及环境配置那些事儿 · 王豆豆的人生旅途</title><meta name="description" content="网站迁移及环境配置那些事儿 - Vogan"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://www.vatery.com/atom.xml" title="王豆豆的人生旅途"><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="王豆豆的人生旅途" type="application/atom+xml">
+</head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"><span class="title">王豆豆的人生旅途</span></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/y-not-u" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="mailto:voganwong@hotmail.com" target="_self" class="nav-list-link">MAIL</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">网站迁移及环境配置那些事儿</h1><div class="post-info">2016年7月6日</div><div class="post-content"><h2 id="原来的站点被DDos了"><a href="#原来的站点被DDos了" class="headerlink" title="原来的站点被DDos了"></a>原来的站点被DDos了</h2><p>最初是放在韩国的kt上的，考虑到中国到韩国的速度较快，所以访问方面没有一点问题。</p>
+<p>但昨天凌晨kt把机子关了，说遭到了DDos的攻击，峰值达到7.6G。虽然只是很小的流量，但服务器商就是关了，还说要关24h。重新开启之后，会换IP，要么买他家的抗D服务，10G100刀，真是抢钱了 。</p>
+<p>网站流量虽然不大，但是还是有人随时访问的，宕机一天的损失也是挺大的。考虑到腊鸡kt说关就关还坑钱，毅然决定搬出来。</p>
+<p>了解到ovh的机子都是无限量抗D，但是由于机房大多在加拿大那种十万八千里的地方，而我家客流大多是国内的，访问速度肯定惨不忍睹。</p>
+<p>最后选到一家综合性价比不错，还带cn2的，可买抗D防护的，<a target="_blank" rel="noopener" href="https://www.globalfrag.com./">https://www.globalfrag.com。</a></p>
+<p>另外毫无疑问的上了cloudflare的cdn。</p>
+<p>速度是变慢了，但是保障多了。</p>
+<h2 id="oneinstack的问题"><a href="#oneinstack的问题" class="headerlink" title="oneinstack的问题"></a>oneinstack的问题</h2><p>本来的机子上是自己用yum装个lnmp。正好迁移图着简单配置，所以准备试试oneinstack的脚本。</p>
+<p>实话说脚本的易用性还是可以的。</p>
+<p>但尴尬的地方也来了。</p>
+<ul>
+<li><p>一键脚本编译安装，官方连个比较正式点的文档都没，没说各个软件的配置文件的路径在哪，在安装结束时会打印一下，但是谁能一下记住。</p>
+</li>
+<li><p>网站需要用到fileinfo的扩展，我自己装的时候是自带的，发现用脚本居然没有编译进去。然后就是一晚上的安装这个插件。从需要安装pecl到，fileinfo需要和php版本对应，反正各种报错，我都要放弃了。之后发现，可以去下个php的源码，解压进去找到fileinfo进行编译安装。并在php.ini中加入扩展fileinfo.so。</p>
+<p>今早才发现oneinstack上有人和我遇到同样的问题（原文链接<a target="_blank" rel="noopener" href="https://oneinstack.com/question/lnmp-why-fileinfo-extension/%EF%BC%89%EF%BC%8C%E5%AE%98%E6%96%B9%E8%A7%A3%E7%AD%94%E8%AF%B4%EF%BC%8C%E8%80%83%E8%99%91%E5%88%B0%E7%BC%96%E8%AF%91%E8%BF%99%E4%B8%AA%E6%97%B6%E9%97%B4%E8%BE%83%E9%95%BF%EF%BC%8C%E5%B0%8F%E9%B8%A1%E5%8F%AF%E8%83%BD%E5%90%83%E4%B8%8D%E6%B6%88%EF%BC%8C%E6%89%80%E4%BB%A5%E6%B2%A1%E6%9C%89%E9%BB%98%E8%AE%A4%E7%BC%96%E8%AF%91%E8%BF%9B%E5%8E%BB%EF%BC%8C%E5%9C%A8oneinstack%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E9%87%8C%E4%BF%9D%E7%95%99%E4%BA%86%E5%AE%89%E8%A3%85%E7%9A%84php%E7%89%88%E6%9C%AC%E7%9A%84%E5%8C%85%E3%80%82">https://oneinstack.com/question/lnmp-why-fileinfo-extension/），官方解答说，考虑到编译这个时间较长，小鸡可能吃不消，所以没有默认编译进去，在oneinstack的文件夹里保留了安装的php版本的包。</a></p>
+</li>
+</ul>
+<h2 id="PHP的坑"><a href="#PHP的坑" class="headerlink" title="PHP的坑"></a>PHP的坑</h2><p>之前的站点用的php7.0，本地开发环境也一样，当函数命名为new时没有问题，但当现在的环境换到5.6之后，开始报错了。一查发现这是PHP的保留词，好吧我孤陋寡闻了。看来7.0完善并使之成为了feature。</p>
+<h2 id="晚上又打了两波"><a href="#晚上又打了两波" class="headerlink" title="晚上又打了两波"></a>晚上又打了两波</h2><p>峰值不高，就是死耗。</p>
+<p>即使上了cloudflare的cdn，免费版也直接打出源IP，后来就不打域名，直接打IP了。</p>
+<p>攻击有500G流量了。</p>
+<p>人艰不拆，若无杀父之仇，还请手下留情。</p>
+<h2 id="7-8-更新"><a href="#7-8-更新" class="headerlink" title="7.8 更新"></a>7.8 更新</h2><p>已找到打手，说对方花了150/天，打10天。</p>
+<p>果然是友商的攻击。</p>
+<p>后来把idcf的机子都打到删除账号了。</p>
+</div></article></div></main><footer><div class="paginator"><a href="/2017/01/25/%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0HTML%E5%8F%8ACSS%E7%AC%94%E8%AE%B0/" class="prev">上一篇</a><a href="/2016/06/26/ssl%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/" class="next">下一篇</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'vatery';
+var disqus_identifier = '2016/07/06/网站迁移及环境配置那些事儿/';
+var disqus_title = '网站迁移及环境配置那些事儿';
+var disqus_url = 'https://www.vatery.com/2016/07/06/网站迁移及环境配置那些事儿/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//vatery.disqus.com/count.js" async></script><div class="copyright"><p>© 2016 - 2023 <a href="https://www.vatery.com">Vogan</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-87375221-1",'auto');ga('send','pageview');</script></body></html>
