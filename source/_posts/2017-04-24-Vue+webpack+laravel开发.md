@@ -1,14 +1,16 @@
 ---
-layout: post
 title: Vue+webpack+laravel开发
-author: Vogan
-date: 2017-04-24
+date: 2017-04-24 12:00:00
+tags: vue,webpack,laravel,web
 ---
 
-# 概念和想法
+这是一次现代化web全栈开发的首次尝试。
+<!--more-->
+
+## 概念和想法
 使用前后端分离的架构，通过Http协议进行数据传输。
 
-### Laravel 5.2 用到的技术
+## Laravel 5.2 用到的技术
 
 * 使用OAuth2.0 来进行验证用户及提供API权限问题
 * 使用dingo API来实现API接口
@@ -26,20 +28,20 @@ date: 2017-04-24
 我选择了vue+webpack实现的单页面应用。
 
 #### webpack的全局变量
+
 当我需要使用开源的类库时，引入变成了一个问题。
 
 例如jquery，当我在网上找了所有方法，并分别尝试了：
 
 * 在ProvidePlugin中当作插件载入
-* 在main.js中rquire载入
+* 在main.js中require载入
 * 使用expose-loader暴露全局
 
 均失败的结果，让我对自己的项目是否破损了产生怀疑。
 
 后来，在一次搜索中发现有人和我遇到了同样的情况，各种方法尝试，在调用`$`会出现未定义的问题，但配置没问题。
 
-有帮助者给出了解决方案：
-[link](https://github.com/SimulatedGREG/electron-vue/issues/36)
+有帮助者给出了解决方案：[https://github.com/SimulatedGREG/electron-vue/issues/36](https://github.com/SimulatedGREG/electron-vue/issues/36)
 
 > It looks like you got everything setup properly. The error you are receiving is from ESLint's no-undef rule. Since jQuery uses the global variable $ or jQuery, ESLint needs to be configured to know about it. Within your .eslintrc.js file, add them to globals.
 

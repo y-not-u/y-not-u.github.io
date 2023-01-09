@@ -1,13 +1,17 @@
 ---
-layout: post
 title: iptables简单拒绝访问指定网址
-author: Vogan
-date: 2016-03-10
+date: 2016-03-10 12:00:00
+tags: linux
 ---
+
 为了防止开放的小鸡流量过快用掉和支撑不起高负荷转发。
+
 简单的iptabels规则：
 
+```bash
+iptables -I OUTPUT -p tcp -m string --string "qq.com" --algo bm -j DROP
+```
 
-```iptables -I OUTPUT -p tcp -m string --string "qq.com" --algo bm -j DROP```
-
-```iptables -I OUTPUT -p udp -m string --string "qq.com" --algo bm -j DROP```
+```bash
+iptables -I OUTPUT -p udp -m string --string "qq.com" --algo bm -j DROP
+```

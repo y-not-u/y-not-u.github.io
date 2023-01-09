@@ -1,13 +1,12 @@
 ---
-layout: post
 title: 排序恶意请求的IP并在Nginx中Deny
-author: Vogan <voganwong@gmail.com>
-date: 2018-04-25
+date: 2018-04-25 12:00:00
+tags: linux,nginx,network
 ---
 
 ## 这是一个Shell脚本：
 
-```shell
+```bash
 #!/bin/bash
 
 cat /var/log/nginx/api.access.log| awk '{print $3}' | sort | uniq -c | sort -n | tail -n 100 | grep -v '-'| sed --expression='s/,//g' |awk '{if ($1>300) print "deny " $2";"}' >> /etc/nginx/conf.d/deny.conf

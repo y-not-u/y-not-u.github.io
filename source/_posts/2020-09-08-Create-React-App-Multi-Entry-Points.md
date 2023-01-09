@@ -1,11 +1,12 @@
 ---
-layout: post
 title: Create-React-App创建的项目进行多页面构建
-author: Vogan
-tags: react,js
+date: 2020-09-08 12:00:00
+tags: react,javascript
 ---
+
 一个项目，两个页面，共用组件！没错，就是Multi Entry Point。
 <!--more-->
+
 ## 背景
 
 - 在一个前端项目中，需要有`前台用户`和`后台管理`两个站点
