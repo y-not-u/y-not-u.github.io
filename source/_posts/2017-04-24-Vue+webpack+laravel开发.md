@@ -1,7 +1,11 @@
 ---
 title: Vue+webpack+laravel开发
 date: 2017-04-24 12:00:00
-tags: vue,webpack,laravel,web
+tags: 
+- Vue
+- webpack
+- laravel
+- web
 ---
 
 这是一次现代化web全栈开发的首次尝试。

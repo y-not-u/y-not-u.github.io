@@ -1,7 +1,9 @@
 ---
 title: Jenkins Docker in Docker 部署
 date: 2018-05-05 12:00:00
-tags: jenkins,docker
+tags: 
+- jenkins
+- docker
 ---
 
 通常情况，Docker作为容器级别的程序，会直接运行在高性能的宿主机上；或者宿主机上运行虚拟机，虚拟机内运行Docker容器；但是怎么会还有在Docker内运行Docker的容器这种需求呢？

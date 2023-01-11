@@ -1,7 +1,9 @@
 ---
 title: Create-React-App创建的项目进行多页面构建
 date: 2020-09-08 12:00:00
-tags: react,javascript
+tags: 
+- react
+- javascript
 ---
 
 一个项目，两个页面，共用组件！没错，就是Multi Entry Point。

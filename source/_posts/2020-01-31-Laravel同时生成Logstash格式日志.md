@@ -2,7 +2,8 @@
 layout: post
 title: Laravel同时生成Logstash格式日志
 date: 2020-01-31 22:39:15
-tags: laravel
+tags: 
+- laravel
 ---
 
 如果你需要将Laravel的日志倒入ELK进行统计查看，就会发现默认的日志格式并不能被Logstash认识，你需要进行各种正则判断，参数转换。如果你使用的是Laravel5.6以上版本，那么恭喜，有非常优雅的方案通过配置即可完成。

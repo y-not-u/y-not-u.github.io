@@ -1,7 +1,10 @@
 ---
 title: 排序恶意请求的IP并在Nginx中Deny
 date: 2018-04-25 12:00:00
-tags: linux,nginx,network
+tags: 
+- linux
+- nginx
+- network
 ---
 
 ## 这是一个Shell脚本：
