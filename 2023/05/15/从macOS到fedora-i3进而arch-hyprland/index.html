@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="zh-cn,en,default"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 从macOS到fedora+i3进而arch+hyprland · 王豆豆的人生旅途</title><meta name="description" content="从macOS到fedora+i3进而arch+hyprland - Vogan"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://www.vatery.com/atom.xml" title="王豆豆的人生旅途"><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="王豆豆的人生旅途" type="application/atom+xml">
+</head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"><span class="title">王豆豆的人生旅途</span></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/y-not-u" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="mailto:voganwong@hotmail.com" target="_self" class="nav-list-link">MAIL</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">从macOS到fedora+i3进而arch+hyprland</h1><div class="post-info">2023年5月16日</div><div class="post-content"><p>由于在单个显示器上开发项目时，还是会遇到不停切换编辑器和浏览器的小痛点，可视空间使用率太低。在一次YouTube上观看大牛使用Linux时，被平铺桌面完完全全吸引住了。拍断大腿，相见恨晚的感觉。</p>
+<p>从此入了Tiling Window Manager的坑。</p>
+<span id="more"></span>
+
+<h2 id="Fedora-i3"><a href="#Fedora-i3" class="headerlink" title="Fedora + i3"></a>Fedora + i3</h2><p>从开始体验Fedora Desktop开始，还是源于Linus最推崇的个人开发操作系统。上手体验后Gnome的桌面系统确实比较完善且稳定。而Fedora上包的丰富程度、版本新鲜度都是不错的。</p>
+<p>自从知道了平铺桌面便跃跃欲试。在各类桌面管理器(Desktop Manager)中犯了选择困难症。</p>
+<p>其中大部分桌面管理器已经再是在世多时，拥有丰富的功能。也有一些新秀，操作、交互、动效更酷！</p>
+<p>例如：</p>
+<ul>
+<li>i3</li>
+<li>bspwm</li>
+<li>Sway</li>
+<li>Xmonad</li>
+<li>AwesomeWM</li>
+<li>…</li>
+</ul>
+<p>由于之前完全没有使用平铺桌面的经验，所以只能选择一个用户社群较大，配置简单的先作为入手。这能让我少踩坑，遇到难题时能够快速搜索到解决路子。</p>
+<p>所以我选取了i3。</p>
+<h2 id="Arch-Hyprland"><a href="#Arch-Hyprland" class="headerlink" title="Arch + Hyprland"></a>Arch + Hyprland</h2><p>至于为什么我又要转到arch + Hyprland，实属是闲得蛋疼。推荐各位有正经、要紧工作做的，千万不要转到这个组合！</p>
+<h3 id="我还是说说我选择arch的理由：软件包丰富"><a href="#我还是说说我选择arch的理由：软件包丰富" class="headerlink" title="我还是说说我选择arch的理由：软件包丰富"></a>我还是说说我选择arch的理由：软件包丰富</h3><p>确实只有这一点，因为Fedora同属为Linux，arch有的大部分优点，Fedora都具备。比如Linux的高度自由定制化、较新的软件包、支持各类平铺桌面。</p>
+<p>可一方面的事实是，看各类GitHub上的软件安装说明时，arch和ubuntu/debian的丰富程度是排第一梯队的；Fedora/CentOS有时是不提供包管理器版本的安装。这让我非常羡慕arch安装包的方便省心。我从macOS上homebrew安装的奢华感受，难以回到编译安装、解决库版本冲突等问题的简陋糟糕体验。</p>
+<h3 id="为什么我不推荐你用arch"><a href="#为什么我不推荐你用arch" class="headerlink" title="为什么我不推荐你用arch"></a>为什么我不推荐你用arch</h3><p>完全是<del>开箱即用</del>的<em>反状态</em>。</p>
+<p>如果说Fedora装了i3之后什么都没配置的情况下，算是毛坯房。<br>arch+Hyprland就是给了你一个地基，连墙壁都要自己搭！</p>
+<p>这里面分两方面：</p>
+<ol>
+<li>arch本身是一个光秃秃的系统</li>
+<li>Hyprland基于Wayland不适用于部分应用</li>
+</ol>
+<p>arch且不说没中文输入法，这个还能理解，更多基本的功能都是需要自己安装软件的。例如中文字体、emoji字体、音频控制、蓝牙连接、文件管理器等等。连显示器长时间没有动作需要熄屏休眠都是没有的。缺失的软件开源的有很多，但是哪个好用并且哪个适配，需要自己一个个尝试。</p>
+<p>等我自己搭配出一套易用的系统之后，我这才明白各种不同发行版存在的意义。</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><h4 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h4><ul>
+<li>开机后内存占用只有800M左右。没有了很多自己用不到的服务之后，确实非常小巧。</li>
+<li>CPU也是极低。</li>
+</ul>
+<h4 id="完全自定义"><a href="#完全自定义" class="headerlink" title="完全自定义"></a>完全自定义</h4><ul>
+<li>所有快捷键都是符合自己使用习惯的，每一个都是自己定义，了熟于心。</li>
+<li>所有应用都是自己挑选，拥有极大的选用范围。</li>
+<li>界面的样式也是按照自己喜好来。</li>
+</ul>
+<h4 id="开源"><a href="#开源" class="headerlink" title="开源"></a>开源</h4><ul>
+<li>快速更新，可以基于git的最新commit进行更新。</li>
+<li>选择性多。</li>
+<li>自由free地修改源码。</li>
+</ul>
+</div></article></div></main><footer><div class="paginator"><a href="/2023/03/28/%E8%AF%BB%E3%80%8A%E8%9B%A4%E8%9F%86%E5%85%88%E7%94%9F%E5%8E%BB%E7%9C%8B%E5%BF%83%E7%90%86%E5%8C%BB%E7%94%9F%E3%80%8B/" class="next">下一篇</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'vatery';
+var disqus_identifier = '2023/05/15/从macOS到fedora-i3进而arch-hyprland/';
+var disqus_title = '从macOS到fedora+i3进而arch+hyprland';
+var disqus_url = 'https://www.vatery.com/2023/05/15/从macOS到fedora-i3进而arch-hyprland/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//vatery.disqus.com/count.js" async></script><div class="copyright"><p>© 2016 - 2023 <a href="https://www.vatery.com">Vogan</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-87375221-1",'auto');ga('send','pageview');</script></body></html>
