@@ -79,7 +79,8 @@
     display: block;
     max-width: 100%;
     margin: 1em auto;
-    box-shadow: 0 10px 20px 8px #bfbfbf;
+    box-shadow: 0 0 20px 4px #bfbfbf;
+    border-radius: 5px;
   }
   & > table,
   & > figure.highlight {
