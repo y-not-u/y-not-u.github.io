@@ -2,16 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.vatery.com/2018/09/23/%E7%A7%BB%E6%A4%8DonOneServer%E6%96%B9%E6%B3%95%E8%87%B3Laravel5.2/</loc>
-    
-    <lastmod>2024-02-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.vatery.com/2018/05/05/jenkins-docker-in-docker/</loc>
+    <loc>https://www.vatery.com/2019/11/29/%E7%BE%A4%E6%99%96%E7%A1%AC%E7%9B%98%E6%8C%82%E8%BD%BD%E8%AF%BB%E5%8F%96/</loc>
     
     <lastmod>2024-02-23</lastmod>
     
@@ -21,15 +12,6 @@
   
   <url>
     <loc>https://www.vatery.com/2019/11/16/%E5%9C%A8macOS%E5%B9%B3%E5%8F%B0%E4%B8%8B%E7%9A%84%E9%AB%98%E6%95%88%E7%8E%87%E5%B7%A5%E4%BD%9C%E6%96%B9%E6%A1%88/</loc>
-    
-    <lastmod>2024-02-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.vatery.com/2019/11/29/%E7%BE%A4%E6%99%96%E7%A1%AC%E7%9B%98%E6%8C%82%E8%BD%BD%E8%AF%BB%E5%8F%96/</loc>
     
     <lastmod>2024-02-23</lastmod>
     
@@ -101,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://www.vatery.com/2023/01/16/alist%E7%BD%91%E7%9B%98%E6%8C%82%E8%BD%BD%E7%A5%9E%E5%99%A8/</loc>
+    <loc>https://www.vatery.com/2023/01/02/2023%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/</loc>
     
     <lastmod>2024-02-23</lastmod>
     
@@ -110,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://www.vatery.com/2023/01/02/2023%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/</loc>
+    <loc>https://www.vatery.com/2023/01/16/alist%E7%BD%91%E7%9B%98%E6%8C%82%E8%BD%BD%E7%A5%9E%E5%99%A8/</loc>
     
     <lastmod>2024-02-23</lastmod>
     
@@ -191,7 +173,7 @@
   </url>
   
   <url>
-    <loc>https://www.vatery.com/2024/02/23/2023-macos-great-apps-md/</loc>
+    <loc>https://www.vatery.com/2024/02/23/2023-macos-great-apps/</loc>
     
     <lastmod>2024-02-23</lastmod>
     
@@ -273,6 +255,24 @@
   
   <url>
     <loc>https://www.vatery.com/2018/05/05/Zabbix3.4%E7%9B%91%E6%8E%A7MySQL/</loc>
+    
+    <lastmod>2024-02-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.vatery.com/2018/05/05/jenkins-docker-in-docker/</loc>
+    
+    <lastmod>2024-02-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.vatery.com/2018/09/23/%E7%A7%BB%E6%A4%8DonOneServer%E6%96%B9%E6%B3%95%E8%87%B3Laravel5.2/</loc>
     
     <lastmod>2024-02-23</lastmod>
     
@@ -388,14 +388,14 @@
   </url>
   
   <url>
-    <loc>https://www.vatery.com/tags/macOS/</loc>
+    <loc>https://www.vatery.com/tags/synology/</loc>
     <lastmod>2024-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.vatery.com/tags/synology/</loc>
+    <loc>https://www.vatery.com/tags/macOS/</loc>
     <lastmod>2024-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -451,13 +451,6 @@
   </url>
   
   <url>
-    <loc>https://www.vatery.com/tags/WebDAV/</loc>
-    <lastmod>2024-02-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.vatery.com/tags/2023/</loc>
     <lastmod>2024-02-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -466,6 +459,13 @@
   
   <url>
     <loc>https://www.vatery.com/tags/plan/</loc>
+    <lastmod>2024-02-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.vatery.com/tags/WebDAV/</loc>
     <lastmod>2024-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
