@@ -1,9 +1,10 @@
 mixin postInfo(item)
-    .post-info
-        != full_date(item.date, 'll')
-        if item.from && (is_home() || is_post())
-            a.post-from(href=item.from target="_blank" title=item.from)!= __('translated')
-
+    .post-info.space-between
+        div
+            != full_date(item.date, 'll')
+            if item.from && (is_home() || is_post())
+                a.post-from(href=item.from target="_blank" title=item.from)!= __('translated')
+        img(src="https://api.visitorbadge.io/api/visitors?path=" + encodeURIComponent(full_url_for(item.path)) + "&labelColor=%23d9e3f0&countColor=%2337d67a&style=flat" alt="visitors")
 
 //- Index Page
 mixin posts()
