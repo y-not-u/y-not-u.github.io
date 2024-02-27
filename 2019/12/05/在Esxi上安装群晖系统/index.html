@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-cn,en,default"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 在Esxi上安装群晖系统 · 王豆豆的人生旅途</title><meta name="description" content="在Esxi上安装群晖系统 - Vogan"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://www.vatery.com/atom.xml" title="王豆豆的人生旅途"><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="王豆豆的人生旅途" type="application/atom+xml">
+<!DOCTYPE html><html lang="zh-cn,en,default"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 在Esxi上安装群晖系统 · 王豆豆的人生旅途</title><meta name="description" content="在Esxi上安装群晖系统 - Vogan"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://www.vatery.com/atom.xml" title="王豆豆的人生旅途"><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="王豆豆的人生旅途" type="application/atom+xml">
 </head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"><span class="title">王豆豆的人生旅途</span></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/y-not-u" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="mailto:voganwong@hotmail.com" target="_self" class="nav-list-link">MAIL</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">在Esxi上安装群晖系统</h1><div class="post-info">2019年12月5日</div><div class="post-content"><p>如果你想要一台高性能的NAS机器，但是又迫于经费不足；再或者不满于群晖的高价低配，那这里还有一种选择…</p>
 <span id="more"></span>
 
@@ -23,8 +23,6 @@
 <li><p>登录Esxi创建一个虚拟机</p>
 <p><img src="https://xpenology.com/forum/uploads/monthly_2018_08/image.png.6e989b3218e3cc1587a25cfe9be84d0f.png"></p>
 </li>
-</ol>
-<ol start="4">
 <li><p>输入创建的类型及名称</p>
 <p><img src="https://xpenology.com/forum/uploads/monthly_2019_06/obraz.thumb.png.66a3ae1d509e572156d772f7fbe0d253.png"></p>
 </li>
@@ -33,7 +31,7 @@
 <h4 id="需要删除的"><a href="#需要删除的" class="headerlink" title="需要删除的"></a>需要删除的</h4><ul>
 <li>删除 <strong>SCSI控制器</strong></li>
 <li>删除 <strong>默认硬盘</strong></li>
-<li>删除 <strong>CD/DVD光驱</strong></li>
+<li>删除 <strong>CD&#x2F;DVD光驱</strong></li>
 <li>删除 <strong>USB控制器</strong></li>
 </ul>
 <h4 id="需要调整的"><a href="#需要调整的" class="headerlink" title="需要调整的"></a>需要调整的</h4><ul>
@@ -46,8 +44,6 @@
 </ul>
 <p>点击「下一步」，然后点击「完成」。</p>
 </li>
-</ol>
-<ol start="5">
 <li><p>让我们稍作休息，后边就是配置引导盘和系统安装盘的操作。</p>
 </li>
 <li><p>再次打开编辑该虚拟机配置</p>
@@ -60,7 +56,7 @@
 <li><p>开机进行设置</p>
 <ul>
 <li>在开机时，终端控制界面会有一闪而过的启动选择项，所以在开机的一刻需要立马疯狂点击按键盘上方向「下箭头」（相信爱折腾的你单身多年是有这个手速的）</li>
-<li>选择Esxi/VMware专用启动</li>
+<li>选择Esxi&#x2F;VMware专用启动</li>
 <li>显示该图则成功<img src="https://xpenology.com/forum/uploads/monthly_2018_08/image.thumb.png.b581d3da08dc2ba7504142719c223ddd.png"></li>
 </ul>
 </li>
