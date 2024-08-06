@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="zh-cn,en,default"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 2024年度Linux优秀CLI推荐 · 王豆豆的人生旅途</title><meta name="description" content="2024年度Linux优秀CLI推荐 - Vogan"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://www.vatery.com/atom.xml" title="王豆豆的人生旅途"><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="王豆豆的人生旅途" type="application/atom+xml">
+</head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"><span class="title">王豆豆的人生旅途</span></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/y-not-u" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="mailto:voganwong@hotmail.com" target="_self" class="nav-list-link">MAIL</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">2024年度Linux优秀CLI推荐</h1><div class="post-info space-between"><div>2024年8月6日</div><img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fwww.vatery.com%2F2024%2F08%2F06%2Fgreat-CLI-in-2024%2F&amp;labelColor=%23d9e3f0&amp;countColor=%2337d67a&amp;style=flat" alt="visitors"></div><div class="post-content"><p><img src="https://cdn.sa.net/2024/08/06/pHsOPr28IVQASbd.jpg" alt="linux.jpg"></p>
+<h2 id="Zoxide"><a href="#Zoxide" class="headerlink" title="Zoxide"></a>Zoxide</h2><p><a target="_blank" rel="noopener" href="https://github.com/ajeetdsouza/zoxide">https://github.com/ajeetdsouza/zoxide</a><br>Zoxide 是一款智能的 <code>cd</code> 命令行工具。它完全可以替代 <code>cd</code> ，并且能完成超出 <code>cd</code> 的功能，比如 <code>jump</code> ，快捷跳入。<br>当你只记得一些目录的关键词时，使用它可以立马进入，而不需要逐层进入。   </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cd</span></span><br><span class="line"><span class="built_in">cd</span> a/b/c/foo</span><br><span class="line"></span><br><span class="line"><span class="comment"># zoxide</span></span><br><span class="line">z foo</span><br></pre></td></tr></table></figure>
+
+<p>如果你使用过 zsh 的 <a target="_blank" rel="noopener" href="http://z.sh/">z.sh</a> ，它们俩非常相似，但是 zoxide 的体验更好：   </p>
+<ol>
+<li>zoxide 使用 Rust 编写，性能、速度可靠   </li>
+<li>zoxide 可以完全无感替代 <code>cd</code> ，并且支持路径补全</li>
+</ol>
+<p>现在它已经成为我使用最多的命令之一了，因为 <code>cd</code> 已经映射到zoxide。  </p>
+<h2 id="EZA"><a href="#EZA" class="headerlink" title="EZA"></a>EZA</h2><p><a target="_blank" rel="noopener" href="https://github.com/eza-community/eza">https://github.com/eza-community/eza</a>    </p>
+<blockquote>
+<p>对于 <code>ls</code>  来说一个更现代化的替代品。   </p>
+</blockquote>
+<p><img src="https://cdn.sa.net/2024/08/06/dlPXnm31cBfRhAG.png" alt="image.png"><br>可以给列出的资源加上丰富的图标和颜色，十分美观 。<br>而我在个人电脑上使用很简单的输出：   </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> <span class="built_in">ls</span>=<span class="string">&#x27;eza --header --color=always --long --no-time --no-user --no-permissions --no-filesize --icons=always --group-directories-first&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="XCP"><a href="#XCP" class="headerlink" title="XCP"></a>XCP</h2><p><a target="_blank" rel="noopener" href="https://github.com/tarka/xcp">https://github.com/tarka/xcp</a><br>没错，看名字都能发现是对 Unix 下 <code>cp</code> 命令的复刻。又是 Rust 写的，性能保证。<br>可以友好地展示复制的进度。<br><img src="https://cdn.sa.net/2024/08/06/jMLJfRhq3bACkcB.png" alt="image_7.png"></p>
+<h2 id="Starship"><a href="#Starship" class="headerlink" title="Starship"></a>Starship</h2><p><a target="_blank" rel="noopener" href="https://github.com/starship/starship">https://github.com/starship/starship</a>    </p>
+<blockquote>
+<p>奇快无比、随意搭配的 shell 提示符（prompt）工具   </p>
+</blockquote>
+<p><img src="https://cdn.sa.net/2024/08/06/4DtyGhUkwuSrF6b.png" alt="image_l.png"></p>
+<p>似乎提到快，一定联想到 Rust，所有需要快的东西一定会被 Rust 重写。以往 C&#x2F;C++ 也是快的，但是没有人愿意这么做，足以说明 Rust 已经不仅仅是性能的优势，更有潮流的特性，吸引众多开发者趋之若鹜地重新开发一些已有的工具。<br><code>oh-my-zsh</code>  很好，有很丰富的插件，但是有时它太慢了。</p>
+<h2 id="tldr"><a href="#tldr" class="headerlink" title="tldr"></a>tldr</h2><p><a target="_blank" rel="noopener" href="https://github.com/tldr-pages/tldr">https://github.com/tldr-pages/tldr</a>    </p>
+<blockquote>
+<p>常见的终端实用命令手册   </p>
+</blockquote>
+<p><img src="https://cdn.sa.net/2024/08/06/O1C563qEacoANrx.png" alt="image_e.png"><br>工具实在太多了，难免会忘记一些参数。不如临时查查手册吧。📖   </p>
+</div></article></div></main><footer><div class="paginator"><a href="/2024/07/17/how-to-submit-first-package-to-aur/" class="next">下一篇</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'vatery';
+var disqus_identifier = '2024/08/06/great-CLI-in-2024/';
+var disqus_title = '2024年度Linux优秀CLI推荐';
+var disqus_url = 'https://www.vatery.com/2024/08/06/great-CLI-in-2024/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//vatery.disqus.com/count.js" async></script><div class="copyright"><p>© 2016 - 2024 <a href="https://www.vatery.com">Vogan</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><!-- - Clarity--><script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script","l6ok4h42je");</script></body></html>
