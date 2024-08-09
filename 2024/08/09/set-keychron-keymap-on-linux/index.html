@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="zh-cn,en,default"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Keychron 系列在 Linux 上无法连接固件网站 · 王豆豆的人生旅途</title><meta name="description" content="Keychron 系列在 Linux 上无法连接固件网站 - Vogan"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://www.vatery.com/atom.xml" title="王豆豆的人生旅途"><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="王豆豆的人生旅途" type="application/atom+xml">
+</head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"><span class="title">王豆豆的人生旅途</span></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/y-not-u" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="mailto:voganwong@hotmail.com" target="_self" class="nav-list-link">MAIL</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">Keychron 系列在 Linux 上无法连接固件网站</h1><div class="post-info space-between"><div>2024年8月9日</div><img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fwww.vatery.com%2F2024%2F08%2F09%2Fset-keychron-keymap-on-linux%2F&amp;labelColor=%23d9e3f0&amp;countColor=%2337d67a&amp;style=flat" alt="visitors"></div><div class="post-content"><p>keychron 支持 <a target="_blank" rel="noopener" href="https://usevia.app/">https://usevia.app</a> 和官网 <a target="_blank" rel="noopener" href="https://launcher.keychron.com/">https://launcher.keychron.com</a> 进行配置。两者稍有不同。<br>下面特别讲讲在 Linux 的环境下如何进行配置。<br>我的系统环境是 Arch Linux，键盘是 Keychron Q60 Max。<br><img src="https://cdn.sa.net/2024/08/09/i1eHWhnoqcmAJF2.png" alt="keychron-Q60-Max"></p>
+<span id="more"></span>
+
+<blockquote>
+<p>keychron 说明要进行改键需要使用有线连接，并使用 Chrome 内核的浏览器访问上面的网站。</p>
+</blockquote>
+<h2 id="连接-Chrome"><a href="#连接-Chrome" class="headerlink" title="连接 Chrome"></a>连接 Chrome</h2><p>一般在 macOS 和 Windows 主流系统上会比较顺畅。但在 Linux 上第一次使用的时候，非常可能遇到 <code>HID device connected</code> 的报错 ，看着意思是成功，实际却没有连接成功的情况。</p>
+<p>在 Chrome 上可以通过访问 <a href="chrome://device-log/">chrome:&#x2F;&#x2F;device-log&#x2F;</a>  查看日志。<br>发现显示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[17:41:40] Failed to open &#x27;/dev/hidraw1&#x27;: FILE_ERROR_ACCESS_DENIED</span><br><span class="line"></span><br><span class="line">[17:41:40] Access denied opening device read-write, trying read-only.</span><br></pre></td></tr></table></figure>
+
+<p>此时需要给予必要的权限：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">chmod</span> a+rw /dev/hidraw1</span><br></pre></td></tr></table></figure>
+
+<p>刷新网页即可连接成功。</p>
+<h2 id="网站-VIA-配置"><a href="#网站-VIA-配置" class="headerlink" title="网站 VIA 配置"></a>网站 VIA 配置</h2><p>keychron 官网连接后可以直接操作改键，但是 VIA 官网则需要导入 JSON 配置文件才能识别。下面简单讲下 <code>usevia.app</code> 上如何导入 JSON 键位配置文件。</p>
+<ol>
+<li><p>进入 keychron 的配置文件和固件网站 <a target="_blank" rel="noopener" href="https://www.keychron.com/pages/firmware-and-json-files-of-the-keychron-qmk-keyboards">https://www.keychron.com/pages/firmware-and-json-files-of-the-keychron-qmk-keyboards</a>  找到相应型号进行下载</p>
+</li>
+<li><p>在 usevia.app 上“设置”页面内打开 “Show Design Tab” 开关</p>
+</li>
+<li><p>切换到出现的 “Design” 页面，点击上传刚刚下载的 JSON 文件</p>
+</li>
+<li><p>然后在首页连接后展示的是相应型号的布局和额外的自定义键值</p>
+</li>
+</ol>
+</div></article></div></main><footer><div class="paginator"><a href="/2024/08/06/great-CLI-in-2024/" class="next">下一篇</a></div><script src="https://utteranc.es/client.js" repo="y-not-u/y-not-u.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script><div class="copyright"><p>© 2016 - 2024 <a href="https://www.vatery.com">Vogan</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><!-- - Clarity--><script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script","l6ok4h42je");</script></body></html>
