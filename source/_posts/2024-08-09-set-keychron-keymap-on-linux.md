@@ -1,5 +1,5 @@
 ---
-title: Keychron 系列在 Linux 上无法连接 VIA 网站改键
+title: Keychron 系列在 Linux 上连接 VIA 网站设置改键
 
 date: 2024-08-09 22:38:31
 tags:
