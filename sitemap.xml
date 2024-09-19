@@ -2,132 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.vatery.com/2024/04/07/react-19/</loc>
-    
-    <lastmod>2024-09-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.vatery.com/2024/06/08/what-is-corepack/</loc>
-    
-    <lastmod>2024-09-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.vatery.com/2024/06/28/vim-tricks/</loc>
-    
-    <lastmod>2024-09-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.vatery.com/2024/07/17/how-to-submit-first-package-to-aur/</loc>
-    
-    <lastmod>2024-09-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.vatery.com/2024/08/06/great-CLI-in-2024/</loc>
-    
-    <lastmod>2024-09-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.vatery.com/2024/08/09/set-keychron-keymap-on-linux/</loc>
-    
-    <lastmod>2024-09-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.vatery.com/2018/05/05/Zabbix3.4%E7%9B%91%E6%8E%A7MySQL/</loc>
-    
-    <lastmod>2024-09-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.vatery.com/2018/05/05/jenkins-docker-in-docker/</loc>
-    
-    <lastmod>2024-09-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.vatery.com/2018/09/23/%E7%A7%BB%E6%A4%8DonOneServer%E6%96%B9%E6%B3%95%E8%87%B3Laravel5.2/</loc>
-    
-    <lastmod>2024-09-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.vatery.com/2019/11/16/%E5%9C%A8macOS%E5%B9%B3%E5%8F%B0%E4%B8%8B%E7%9A%84%E9%AB%98%E6%95%88%E7%8E%87%E5%B7%A5%E4%BD%9C%E6%96%B9%E6%A1%88/</loc>
-    
-    <lastmod>2024-09-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.vatery.com/2019/11/29/%E7%BE%A4%E6%99%96%E7%A1%AC%E7%9B%98%E6%8C%82%E8%BD%BD%E8%AF%BB%E5%8F%96/</loc>
-    
-    <lastmod>2024-09-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.vatery.com/2019/12/05/%E5%9C%A8Esxi%E4%B8%8A%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96%E7%B3%BB%E7%BB%9F/</loc>
-    
-    <lastmod>2024-09-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.vatery.com/2020/01/31/Laravel%E5%90%8C%E6%97%B6%E7%94%9F%E6%88%90Logstash%E6%A0%BC%E5%BC%8F%E6%97%A5%E5%BF%97/</loc>
-    
-    <lastmod>2024-09-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.vatery.com/2020/07/15/RxJS%E5%88%9D%E4%BD%93%E9%AA%8C/</loc>
-    
-    <lastmod>2024-09-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.vatery.com/2020/09/08/Create-React-App-Multi-Entry-Points/</loc>
     
     <lastmod>2024-09-19</lastmod>
@@ -218,15 +92,6 @@
   </url>
   
   <url>
-    <loc>https://www.vatery.com/2023/08/31/%E8%A7%82%E7%9C%8B%E3%80%8A%E5%A5%A5%E6%9C%AC%E6%B5%B7%E9%BB%98%E3%80%8B/</loc>
-    
-    <lastmod>2024-09-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.vatery.com/2023/09/02/%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3Nvim%E7%9A%84cmp%E4%B8%8Elsp/</loc>
     
     <lastmod>2024-09-19</lastmod>
@@ -245,6 +110,15 @@
   </url>
   
   <url>
+    <loc>https://www.vatery.com/2023/08/31/%E8%A7%82%E7%9C%8B%E3%80%8A%E5%A5%A5%E6%9C%AC%E6%B5%B7%E9%BB%98%E3%80%8B/</loc>
+    
+    <lastmod>2024-09-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.vatery.com/2023/12/24/annual-plan-for-2024/</loc>
     
     <lastmod>2024-09-19</lastmod>
@@ -255,6 +129,69 @@
   
   <url>
     <loc>https://www.vatery.com/2024/02/23/2023-macos-great-apps/</loc>
+    
+    <lastmod>2024-09-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.vatery.com/2024/04/07/react-19/</loc>
+    
+    <lastmod>2024-09-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.vatery.com/2024/06/08/what-is-corepack/</loc>
+    
+    <lastmod>2024-09-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.vatery.com/2024/06/28/vim-tricks/</loc>
+    
+    <lastmod>2024-09-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.vatery.com/2024/07/17/how-to-submit-first-package-to-aur/</loc>
+    
+    <lastmod>2024-09-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.vatery.com/2024/08/06/great-CLI-in-2024/</loc>
+    
+    <lastmod>2024-09-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.vatery.com/2024/08/09/set-keychron-keymap-on-linux/</loc>
+    
+    <lastmod>2024-09-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.vatery.com/2024/09/19/what-services-are-deployed-on-my-aliyun-server/</loc>
     
     <lastmod>2024-09-19</lastmod>
     
@@ -327,6 +264,78 @@
   
   <url>
     <loc>https://www.vatery.com/2018/04/25/%E6%8E%92%E5%BA%8F%E6%81%B6%E6%84%8F%E8%AF%B7%E6%B1%82%E7%9A%84IP%E5%B9%B6%E5%9C%A8Nginx%E4%B8%ADDeny/</loc>
+    
+    <lastmod>2024-09-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.vatery.com/2018/05/05/Zabbix3.4%E7%9B%91%E6%8E%A7MySQL/</loc>
+    
+    <lastmod>2024-09-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.vatery.com/2018/05/05/jenkins-docker-in-docker/</loc>
+    
+    <lastmod>2024-09-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.vatery.com/2018/09/23/%E7%A7%BB%E6%A4%8DonOneServer%E6%96%B9%E6%B3%95%E8%87%B3Laravel5.2/</loc>
+    
+    <lastmod>2024-09-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.vatery.com/2019/11/16/%E5%9C%A8macOS%E5%B9%B3%E5%8F%B0%E4%B8%8B%E7%9A%84%E9%AB%98%E6%95%88%E7%8E%87%E5%B7%A5%E4%BD%9C%E6%96%B9%E6%A1%88/</loc>
+    
+    <lastmod>2024-09-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.vatery.com/2019/11/29/%E7%BE%A4%E6%99%96%E7%A1%AC%E7%9B%98%E6%8C%82%E8%BD%BD%E8%AF%BB%E5%8F%96/</loc>
+    
+    <lastmod>2024-09-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.vatery.com/2019/12/05/%E5%9C%A8Esxi%E4%B8%8A%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96%E7%B3%BB%E7%BB%9F/</loc>
+    
+    <lastmod>2024-09-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.vatery.com/2020/01/31/Laravel%E5%90%8C%E6%97%B6%E7%94%9F%E6%88%90Logstash%E6%A0%BC%E5%BC%8F%E6%97%A5%E5%BF%97/</loc>
+    
+    <lastmod>2024-09-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.vatery.com/2020/07/15/RxJS%E5%88%9D%E4%BD%93%E9%AA%8C/</loc>
     
     <lastmod>2024-09-19</lastmod>
     
@@ -540,14 +549,14 @@
   </url>
   
   <url>
-    <loc>https://www.vatery.com/tags/movie/</loc>
+    <loc>https://www.vatery.com/tags/nvim/</loc>
     <lastmod>2024-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.vatery.com/tags/nvim/</loc>
+    <loc>https://www.vatery.com/tags/movie/</loc>
     <lastmod>2024-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
