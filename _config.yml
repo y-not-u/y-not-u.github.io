@@ -5,7 +5,7 @@
 # Site
 title: 王豆豆的人生旅途
 subtitle: "vogan's blog"
-description: ''
+description: '王豆豆的个人博客，生活、工作、见解、分享、思考。'
 keywords: 王豆豆,博客,blog
 author: Vogan
 language:
@@ -43,6 +43,9 @@ external_link:
 filename_case: 0
 render_drafts: false
 post_asset_folder: true
+marked:
+  prependRoot: true
+  postAsset: true
 relative_link: false
 future: true
 highlight:
