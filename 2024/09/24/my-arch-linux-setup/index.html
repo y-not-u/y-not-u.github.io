@@ -18,16 +18,16 @@
 <li>状态栏 Status Bar：Waybar</li>
 </ul>
 <h2 id="桌面环境"><a href="#桌面环境" class="headerlink" title="桌面环境"></a>桌面环境</h2><h3 id="平铺桌面-Hyprland"><a href="#平铺桌面-Hyprland" class="headerlink" title="平铺桌面 Hyprland"></a>平铺桌面 Hyprland</h3><p>非常优雅的平铺桌面，丝滑的动画一下吸引了我，马上从 i3 转换过来。这里不得不吹捧下平铺桌面。我第一次在视频中看到这种交互方式，瞬间迷上了。能够最高效率的使用桌面空间，也能够切换不同工作空间(Workspace)。这一切都是通过键盘快捷键操作，没有多余的鼠标动作。</p>
-<p><img src="/2024/09/24/my-arch-linux-setup/arch-linux.png" alt="2024-09-24_13-26-48.png"></p>
+<p><img src="/2024/09/24/my-arch-linux-setup/arch-linux.webp" alt="2024-09-24_13-26-48.webp"></p>
 <h3 id="启动器-Rofi"><a href="#启动器-Rofi" class="headerlink" title="启动器 Rofi"></a>启动器 Rofi</h3><p>一个勉强够用的应用启动器，和 macOS 上的 Alfred &#x2F; Raycast 相比差远了，离 Windows 上的 Power Toys 也是有一段距离。有些使用 Gnome 等桌面的也可以尝试下 Electron 开发的 uTools，这款是比较完善的国人开发的启动器。但是在 Hyprland 上有一些问题，所以我就没有使用。</p>
 <p>Rofi 默认的主题比较粗糙，起初我也参考一些其他人的案例进行手动修改，但是最终在开源仓库里选择了一款，更省心和完善。<a target="_blank" rel="noopener" href="https://github.com/newmanls/rofi-themes-collection">https://github.com/newmanls/rofi-themes-collection</a></p>
-<p><img src="/2024/09/24/my-arch-linux-setup/rofi.png" alt="image.png"></p>
+<p><img src="/2024/09/24/my-arch-linux-setup/rofi.webp" alt="image.webp"></p>
 <h3 id="浏览器-Zen-Browser"><a href="#浏览器-Zen-Browser" class="headerlink" title="浏览器 Zen Browser"></a>浏览器 Zen Browser</h3><p>我在 Linux 桌面环境里使用过非常多种类的浏览器，不是因为我闲得蛋疼，只是因为 Wayland 的兼容问题。实际内心想哭。特别针对 Chromium 系列浏览器，fcitx 输入法的问题困扰已久。</p>
 <p>原生的 Chrome 和 Chromium 及衍生版需要添加下列参数才能有正确的缩放比例，但是输入法有时仍会出错，要么无法输入中文，要么候选框偏移超级离谱。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime</span><br></pre></td></tr></table></figure>
 
 <p>但是 Firefox 系列浏览器没有这个问题，对 Linux 环境非常友好，缺点是运行速度偏慢。Firefox 衍生的浏览器有很多，基本主打的都是开源、隐私，例如：Firefox &#x2F; Waterfox &#x2F; LibreWolf &#x2F; Floorp &#x2F; Zen Browser…，我都尝试过，有的平平无奇，有的甚至BUG百出。最后选择了 Zen Browser，功能比较稳定，侧边栏和分栏展示也是我中意的点。</p>
-<p><img src="/2024/09/24/my-arch-linux-setup/zen-browser.png" alt="image.png"></p>
+<p><img src="/2024/09/24/my-arch-linux-setup/zen-browser.webp" alt="image.webp"></p>
 <h3 id="动态墙纸-mpvpaper"><a href="#动态墙纸-mpvpaper" class="headerlink" title="动态墙纸 mpvpaper"></a>动态墙纸 mpvpaper</h3><p>核心功能来自于 mpv，且支持 mpv 透传参数，例如全屏、随机播放、循环播放等。我从网络上下载了一些 city walk 的视频作为背景，配合透明的 Neovim 编程沉浸其中。</p>
 <h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a><strong>开发环境</strong></h2><p>我是一个 Web 全栈开发者，主要以 JavaScript &#x2F; TypeScript &#x2F; NodeJS 为主，偶尔也会使用 Go &#x2F; Python 写一些小脚本。</p>
 <h3 id="编辑器-Neovim"><a href="#编辑器-Neovim" class="headerlink" title="编辑器 Neovim"></a><strong>编辑器 Neovim</strong></h3><p>这是一个比较小众的选择，我从 Sublime Text → Atom → VSCode → Noevim 一路走来，只能说你想好好编写代码，千万不要碰 Vim &#x2F; Emacs 之类的东西。搭配 Lazy.nvim 管理插件，打造到我现在用的顺手模样，没法说具体花多久时间，只能说一直在优化修改配置和挑选新的插件，不停地折腾。</p>
@@ -39,8 +39,8 @@
 <h3 id="Session-管理-Zellij"><a href="#Session-管理-Zellij" class="headerlink" title="Session 管理 Zellij"></a>Session 管理 Zellij</h3><p>tmux 无疑是优秀且悠久的终端 sesssion 管理器，但是其操作非常考验使用者的熟练度。</p>
 <p>而新秀 Zellij 则是更多考虑了交互，提供指令提示。对新手非常友好。</p>
 <p>当然同时提供了相当强悍的自定义性，包括键位、布局等等。可谓老少咸宜。</p>
-<p><img src="/2024/09/24/my-arch-linux-setup/zellij.png" alt="image.png"></p>
+<p><img src="/2024/09/24/my-arch-linux-setup/zellij.webp" alt="image.webp"></p>
 <h3 id="Git-版本控制-Lazygit"><a href="#Git-版本控制-Lazygit" class="headerlink" title="Git 版本控制 Lazygit"></a>Git 版本控制 Lazygit</h3><p>第一次用过 Lazygit 后再也不乐意徒手敲命令了🤣。</p>
-<p><img src="/2024/09/24/my-arch-linux-setup/lazygit.png" alt="image.png"></p>
+<p><img src="/2024/09/24/my-arch-linux-setup/lazygit.webp" alt="image.webp"></p>
 <p>最后，几年用 Linux 作为工作的操作系统，聊一点感受。<br>Linux 的最大优点便是，极大的自由度。可以让使用者自己选择喜爱的各类工具，甚至动手能力强的可以制造出最符合个人习惯的工具。最大的缺点则是，有时缺乏一些优质交互的软件，还有软件的不稳定性（内核还是非常稳定的，桌面就说不定了🐶）。丰富的开源项目、活跃的社区是其特色。衷心希望 Linux 生态生生不息。</p>
 </div></article></div></main><footer><div class="paginator"><a href="/2024/09/19/what-services-are-deployed-on-my-aliyun-server/" class="next">下一篇</a></div><script src="https://utteranc.es/client.js" repo="y-not-u/y-not-u.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script><div class="copyright"><p>© 2016 - 2024 <a href="https://www.vatery.com">Vogan</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script","l6ok4h42je");</script><script defer src="https://cloud.umami.is/script.js" data-website-id="4d516321-c1cf-4643-ad1e-2900a14d72f4"></script></body></html>
