@@ -33,7 +33,7 @@ tags:
 
 非常优雅的平铺桌面，丝滑的动画一下吸引了我，马上从 i3 转换过来。这里不得不吹捧下平铺桌面。我第一次在视频中看到这种交互方式，瞬间迷上了。能够最高效率的使用桌面空间，也能够切换不同工作空间(Workspace)。这一切都是通过键盘快捷键操作，没有多余的鼠标动作。
 
-![2024-09-24_13-26-48.png](arch-linux.png)
+![2024-09-24_13-26-48.webp](arch-linux.webp)
 
 ### 启动器 Rofi
 
@@ -41,7 +41,7 @@ tags:
 
 Rofi 默认的主题比较粗糙，起初我也参考一些其他人的案例进行手动修改，但是最终在开源仓库里选择了一款，更省心和完善。https://github.com/newmanls/rofi-themes-collection
 
-![image.png](rofi.png)
+![image.webp](rofi.webp)
 
 ### 浏览器 Zen Browser
 
@@ -55,7 +55,7 @@ Rofi 默认的主题比较粗糙，起初我也参考一些其他人的案例进
 
 但是 Firefox 系列浏览器没有这个问题，对 Linux 环境非常友好，缺点是运行速度偏慢。Firefox 衍生的浏览器有很多，基本主打的都是开源、隐私，例如：Firefox / Waterfox / LibreWolf / Floorp / Zen Browser…，我都尝试过，有的平平无奇，有的甚至BUG百出。最后选择了 Zen Browser，功能比较稳定，侧边栏和分栏展示也是我中意的点。
 
-![image.png](zen-browser.png)
+![image.webp](zen-browser.webp)
 
 ### 动态墙纸 mpvpaper
 
@@ -93,13 +93,13 @@ tmux 无疑是优秀且悠久的终端 sesssion 管理器，但是其操作非�
 
 当然同时提供了相当强悍的自定义性，包括键位、布局等等。可谓老少咸宜。
 
-![image.png](zellij.png)
+![image.webp](zellij.webp)
 
 ### Git 版本控制 Lazygit
 
 第一次用过 Lazygit 后再也不乐意徒手敲命令了🤣。
 
-![image.png](lazygit.png)
+![image.webp](lazygit.webp)
 
 
 
