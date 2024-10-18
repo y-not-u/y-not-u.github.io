@@ -2,7 +2,7 @@
 title: 我的 Arch Linux 基本配置
 date: 2024-09-24 22:03:17
 tags:
-- Linux
+   - Linux
 ---
 
 ![](cover.webp)
