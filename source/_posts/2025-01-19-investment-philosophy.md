@@ -11,6 +11,7 @@ tags:
 
 下面有我几点小思考。
 
+![cover](https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixid=M3w1NDQ0ODJ8MHwxfHNlYXJjaHw0fHxzdG9ja3xlbnwwfHx8fDE3MzcyOTkxMzZ8MA&ixlib=rb-4.0.3)
 <!--more-->
 
 ## 分散投资还是集中投资？
