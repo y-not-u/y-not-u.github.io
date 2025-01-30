@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="zh-cn,en,default"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Windows 上的平铺桌面管理器 GlazeWM · 王豆豆的人生旅途</title><meta name="description" content="Windows 上的平铺桌面管理器 GlazeWM - Vogan"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&amp;display=swap"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://www.vatery.com/atom.xml" title="王豆豆的人生旅途"><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="王豆豆的人生旅途" type="application/atom+xml">
+</head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"><span class="title">王豆豆的人生旅途</span></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/y-not-u" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="mailto:voganwong@hotmail.com" target="_self" class="nav-list-link">MAIL</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">Windows 上的平铺桌面管理器 GlazeWM</h1><div class="post-info space-between"><div>2025年1月30日</div><img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fwww.vatery.com%2F2025%2F01%2F30%2Fintroduction-to-GlazeWM%2F&amp;labelColor=%23d9e3f0&amp;countColor=%2337d67a&amp;style=flat" alt="visitors"></div><div class="post-content"><p>我之前的 Web 开发工作，是可以完全在 Linux 上完成的。使用的是 Arch Linux 发行版搭配 Hyprland 平铺桌面，拥有最完善的 Wiki 和最丰富的软件源，凭借 Linux 的开放性，能够做到极致的个性化。</p>
+<p>但是由于目前需要开发鸿蒙 App，只能更换到 Windows 上使用 DevEco Studio IDE 进行开发。于我而言，最离不开的还是<strong>平铺桌面</strong>。其次是<strong>命令终端</strong>。</p>
+<p>之前尝试过 komorebi，感觉不是很顺手，然后切换到 GlazeWM。感觉瞬间回来了！</p>
+<p><img src="/2025/01/30/introduction-to-GlazeWM/GlazeWM-Demo.webp" alt="demo"></p>
+<span id="more"></span>
+
+<p>仓库地址：<a target="_blank" rel="noopener" href="https://github.com/glzr-io/glazewm">https://github.com/glzr-io/glazewm</a></p>
+<div class="tip">由于 release 版本和仓库最新的 main 分支代码有所区别，所以功能以及键位有差别。（例如最新的代码支持设置透明度 `set-opacity`，截至 2025.01.20 最新 release <b>v3.7.0</b> 并无该功能）</div>
+
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ol>
+<li>使用 yaml 配置文件</li>
+<li>支持多显示器</li>
+<li>针对 window 的自定义 rules</li>
+<li>一键快速安装</li>
+<li>能够和 Zebar 状态栏搭配运行</li>
+</ol>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>推荐通过 winget 进行安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">winget install GlazeWM</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>官方提供了一份配置 <a target="_blank" rel="noopener" href="https://github.com/glzr-io/glazewm/blob/main/resources/assets/sample-config.yaml">sample-config.yaml</a>可供参考。</p>
+<p>如果希望有一些额外的个性化设置，下面的内容或许对你有所帮助。</p>
+<p>Windows 上安装后默认的配置目录是 <code>~/.glzr/glazewm/config.yaml</code></p>
+<h3 id="查看-window-的信息"><a href="#查看-window-的信息" class="headerlink" title="查看 window 的信息"></a>查看 window 的信息</h3><p>推荐使用 <a target="_blank" rel="noopener" href="https://www.nirsoft.net/utils/winlister.html">Winlister</a> 能够查看所有开启窗口的 Title 和 Class 等信息。用于 rule 的匹配。</p>
+<h3 id="设置命令"><a href="#设置命令" class="headerlink" title="设置命令"></a>设置命令</h3><p>GlazeWM 缺少一个更友好的官方文档说明。有许多命令并没有写在文档里，在我翻看了源码之后在这里简单整理下。</p>
+<p><strong>设置窗口浮动</strong></p>
+<p><em>该命令支持的参数较多，可以自由搭配。</em></p>
+<p><code>set-floating --centered --shown-on-top --x-pos 100 --y-pos 100 --width 400 --height 400</code>  设置浮动并指定窗口的大小和位置</p>
+<p><strong>设置窗口位置</strong></p>
+<p><code>position --x-pos 200 --y-pos 0</code> 移动窗口到 x:200 y:0</p>
+<p><strong>设置窗口大小</strong></p>
+<p><code>size --width 800 --height 600</code></p>
+<p><strong>重置窗口大小</strong></p>
+<p><code>resize --width +2% --height -2%</code></p>
+<p><strong>设置窗口全屏</strong></p>
+<p><code>toggle-fullscreen</code> 开关全屏</p>
+<p><code>set-fullscreen --maximized --shown-on-top</code> 设置全屏</p>
+<p><strong>移动工作空间</strong></p>
+<p><code>move-workspace --direction [left|right|up|down]</code></p>
+<p><strong>移动窗口到工作空间</strong></p>
+<p><code>move --workspace 1</code> 移动窗口到工作空间1</p>
+<p><strong>改变焦点</strong></p>
+<p><code>focus --workspace 1</code> 聚焦到工作空间1</p>
+<p><code>focus --next-active-workspace</code> 聚焦到下一个激活的工作空间</p>
+<p><code>focus --prev-active-workspace</code> 聚焦到上一个激活的工作空间</p>
+<p><code>focus --prev-workspace</code> 聚焦到上一个工作空间</p>
+<p><code>focus --next-workspace</code> 聚焦到下一个工作空间</p>
+<p><code>focus --recent-workspace</code> 聚焦到最近的工作空间</p>
+<p><code>focus --direction [left|right|up|down]</code> 聚焦到上下左右的工作空间</p>
+<p><code>focus --name browser</code> 聚焦到指定名字的工作空间</p>
+<p><code>focus --monitor-index 1</code> 聚焦到指定显示器</p>
+<p><strong>忽略窗口</strong></p>
+<p><code>ignore</code></p>
+<p><strong>关闭窗口</strong></p>
+<p><code>close</code></p>
+<p><strong>最小化窗口</strong></p>
+<p><code>toggle-minimized</code> 开关窗口最小化</p>
+<p><code>set-minimized</code> 设置最小化窗口</p>
+<p><strong>标题栏</strong></p>
+<p><code>set-title-bar-visibility [shown|hidden]</code> 设置标题栏是否展示</p>
+<p><strong>执行命令</strong></p>
+<p><code>shell-exec explorer.exe</code> 打开文件管理器</p>
+<p><strong>平铺窗口</strong></p>
+<p><code>toggle-tiling</code> 切换窗口平铺表现</p>
+<p><code>toggle-tiling-direction</code> 切换窗口平铺方向</p>
+<p><code>set-tilling-direction [horizontal|vertical]</code> 设置平铺方向</p>
+<p><strong>窗口管理器</strong></p>
+<p><code>wm-exit</code> 退出窗口管理器</p>
+<p><code>wm-cycle-focus</code> 切换聚焦模式 窗口 → 浮动  → 全屏</p>
+<p><code>wm-disable-binding-mode --name resize</code>  停用绑定模式，按下 enter&#x2F;escape 回退到默认快捷键绑定</p>
+<p><code>wm-enable-binding-mode --name resize</code> 启用绑定模式</p>
+<p><code>wm-redraw</code> 重绘所有窗口</p>
+<p><code>wm-reload-config</code> 重新加载配置文件</p>
+<p><code>wm-toggle-pause</code> 开关停用窗口管理器及其所有快捷键</p>
+<h2 id="个人感受"><a href="#个人感受" class="headerlink" title="个人感受"></a>个人感受</h2><p>使用功能上还是比较完善的，虽然自定义化比不上 Linux 生态，但这是 Windows 系统的限制，并不能要求仅仅通过桌面管理器来解决。整体体验也是非常类似于 Linux 上的一些知名软件如 i3 &#x2F; hyprland，能达到将近80%的效果。</p>
+<p>另外Rust 语言开发也保证了性能。</p>
+<p>提供的接口基本够用。例如移动窗口，更改窗口大小，设置窗口浮动等等。</p>
+<p>软件稳定性不错，比较少遇到 bug。</p>
+<p>项目稳定性也不错，积极更新。</p>
+<p>如果你在 Windows 下想要尝试平铺桌面，推荐你试一试 GlazeWM。</p>
+</div></article></div></main><footer><div class="paginator"><a href="/2025/01/19/investment-philosophy/" class="next">下一篇</a></div><script src="https://utteranc.es/client.js" repo="y-not-u/y-not-u.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script><div class="copyright"><p>© 2016 - 2025 <a href="https://www.vatery.com">Vogan</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script","l6ok4h42je");</script><script defer src="https://cloud.umami.is/script.js" data-website-id="4d516321-c1cf-4643-ad1e-2900a14d72f4"></script></body></html>
