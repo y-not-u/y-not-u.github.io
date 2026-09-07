@@ -1,5 +1,20 @@
-<!DOCTYPE html><html lang="zh-cn,en,default"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 在Esxi上安装群晖系统 · 王豆豆的人生旅途</title><meta name="description" content="在Esxi上安装群晖系统 - Vogan"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&amp;display=swap"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://www.vatery.com/atom.xml" title="王豆豆的人生旅途"><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="王豆豆的人生旅途" type="application/atom+xml">
-</head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"><span class="title">王豆豆的人生旅途</span></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/y-not-u" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="mailto:voganwong@hotmail.com" target="_self" class="nav-list-link">MAIL</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">在Esxi上安装群晖系统</h1><div class="post-info space-between"><div>2019年12月5日</div><img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fwww.vatery.com%2F2019%2F12%2F05%2F%25E5%259C%25A8Esxi%25E4%25B8%258A%25E5%25AE%2589%25E8%25A3%2585%25E7%25BE%25A4%25E6%2599%2596%25E7%25B3%25BB%25E7%25BB%259F%2F&amp;labelColor=%23d9e3f0&amp;countColor=%2337d67a&amp;style=flat" alt="visitors"></div><div class="post-content"><p>如果你想要一台高性能的NAS机器，但是又迫于经费不足；再或者不满于群晖的高价低配，那这里还有一种选择…</p>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 在Esxi上安装群晖系统 · 王豆豆的人生旅途</title><meta name="description" content="在Esxi上安装群晖系统 - Vogan"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="canonical" href="https://www.vatery.com/2019/12/05/%E5%9C%A8Esxi%E4%B8%8A%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96%E7%B3%BB%E7%BB%9F/"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&amp;display=swap"><link rel="stylesheet" href="/css/apollo.css"><meta name="description" content="如果你想要一台高性能的NAS机器，但是又迫于经费不足；再或者不满于群晖的高价低配，那这里还有一种选择…">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在Esxi上安装群晖系统">
+<meta property="og:url" content="https://www.vatery.com/2019/12/05/%E5%9C%A8Esxi%E4%B8%8A%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:site_name" content="王豆豆的人生旅途">
+<meta property="og:description" content="如果你想要一台高性能的NAS机器，但是又迫于经费不足；再或者不满于群晖的高价低配，那这里还有一种选择…">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.vatery.com/favicon.png">
+<meta property="article:published_time" content="2019-12-05T04:00:00.000Z">
+<meta property="article:modified_time" content="2026-09-07T15:12:40.870Z">
+<meta property="article:author" content="Vogan">
+<meta property="article:tag" content="esxi">
+<meta property="article:tag" content="nas">
+<meta property="article:tag" content="synology">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.vatery.com/favicon.png"><meta name="generator" content="Hexo 8.1.1"><link rel="alternate" href="/atom.xml" title="王豆豆的人生旅途" type="application/atom+xml">
+</head><body><div class="wrap"><header><a class="logo-link" href="/"><img src="/favicon.png" alt="logo"><span class="title">王豆豆的人生旅途</span></a><ul class="nav nav-list"><li class="nav-list-item"><a class="nav-list-link" href="/" target="_self">BLOG</a></li><li class="nav-list-item"><a class="nav-list-link" href="/archives/" target="_self">ARCHIVE</a></li><li class="nav-list-item"><a class="nav-list-link" href="https://github.com/y-not-u" target="_blank">GITHUB</a></li><li class="nav-list-item"><a class="nav-list-link" href="mailto:voganwong@hotmail.com" target="_self">MAIL</a></li><li class="nav-list-item"><a class="nav-list-link" href="/atom.xml" target="_self">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">在Esxi上安装群晖系统</h1><div class="post-info space-between"><div>2019年12月5日</div><img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fwww.vatery.com%2F2019%2F12%2F05%2F%25E5%259C%25A8Esxi%25E4%25B8%258A%25E5%25AE%2589%25E8%25A3%2585%25E7%25BE%25A4%25E6%2599%2596%25E7%25B3%25BB%25E7%25BB%259F%2F&amp;labelColor=%23d9e3f0&amp;countColor=%2337d67a&amp;style=flat" alt="visitors"></div><div class="post-content"><p>如果你想要一台高性能的NAS机器，但是又迫于经费不足；再或者不满于群晖的高价低配，那这里还有一种选择…</p>
 <span id="more"></span>
 
 <blockquote>
@@ -21,13 +36,13 @@
 <li><p>将压缩文件解压，并把<code>synoboot.vmdk</code>和<code>synoboot.img</code>上传到Esxi的存储中</p>
 </li>
 <li><p>登录Esxi创建一个虚拟机</p>
-<p><img src="https://xpenology.com/forum/uploads/monthly_2018_08/image.png.6e989b3218e3cc1587a25cfe9be84d0f.png"></p>
+<p><img src="https://xpenology.com/forum/uploads/monthly_2018_08/image.png.6e989b3218e3cc1587a25cfe9be84d0f.png" loading="lazy"></p>
 </li>
 <li><p>输入创建的类型及名称</p>
-<p><img src="https://xpenology.com/forum/uploads/monthly_2019_06/obraz.thumb.png.66a3ae1d509e572156d772f7fbe0d253.png"></p>
+<p><img src="https://xpenology.com/forum/uploads/monthly_2019_06/obraz.thumb.png.66a3ae1d509e572156d772f7fbe0d253.png" loading="lazy"></p>
 </li>
 <li><p>重点在这一步</p>
-<p><img src="https://xpenology.com/forum/uploads/monthly_2018_08/image.thumb.png.315e05a08ae9679b5da7b6e84852d284.png"></p>
+<p><img src="https://xpenology.com/forum/uploads/monthly_2018_08/image.thumb.png.315e05a08ae9679b5da7b6e84852d284.png" loading="lazy"></p>
 <h4 id="需要删除的"><a href="#需要删除的" class="headerlink" title="需要删除的"></a>需要删除的</h4><ul>
 <li>删除 <strong>SCSI控制器</strong></li>
 <li>删除 <strong>默认硬盘</strong></li>
@@ -48,8 +63,8 @@
 </li>
 <li><p>再次打开编辑该虚拟机配置</p>
 <ul>
-<li>添加硬盘（用于引导盘），选择「现有硬盘」，找到之前上传的<code>synoboot.vmdk</code>文件并选择；点开左侧小箭头，选择「虚拟设备节点」，确定为<code>SATA contoller 0</code>和<code>SATA(0:0)</code><img src="https://xpenology.com/forum/uploads/monthly_2018_08/image.thumb.png.aff0e1988324bb515e12db6e105178e8.png"></li>
-<li>添加硬盘（用于系统安装挂载），选择「全新的硬盘」，分配容量（推荐20G以上）；点开左侧小箭头，同样选择「虚拟设备节点」，确定为<code>SATA controller 1</code>和<code>SATA(1:0)</code><img src="https://xpenology.com/forum/uploads/monthly_2018_08/image.thumb.png.98d57dec673ec56600679b0e9919f63c.png"></li>
+<li>添加硬盘（用于引导盘），选择「现有硬盘」，找到之前上传的<code>synoboot.vmdk</code>文件并选择；点开左侧小箭头，选择「虚拟设备节点」，确定为<code>SATA contoller 0</code>和<code>SATA(0:0)</code><img src="https://xpenology.com/forum/uploads/monthly_2018_08/image.thumb.png.aff0e1988324bb515e12db6e105178e8.png" loading="lazy"></li>
+<li>添加硬盘（用于系统安装挂载），选择「全新的硬盘」，分配容量（推荐20G以上）；点开左侧小箭头，同样选择「虚拟设备节点」，确定为<code>SATA controller 1</code>和<code>SATA(1:0)</code><img src="https://xpenology.com/forum/uploads/monthly_2018_08/image.thumb.png.98d57dec673ec56600679b0e9919f63c.png" loading="lazy"></li>
 <li>保存</li>
 </ul>
 </li>
@@ -57,33 +72,51 @@
 <ul>
 <li>在开机时，终端控制界面会有一闪而过的启动选择项，所以在开机的一刻需要立马疯狂点击按键盘上方向「下箭头」（相信爱折腾的你单身多年是有这个手速的）</li>
 <li>选择Esxi&#x2F;VMware专用启动</li>
-<li>显示该图则成功<img src="https://xpenology.com/forum/uploads/monthly_2018_08/image.thumb.png.b581d3da08dc2ba7504142719c223ddd.png"></li>
+<li>显示该图则成功<img src="https://xpenology.com/forum/uploads/monthly_2018_08/image.thumb.png.b581d3da08dc2ba7504142719c223ddd.png" loading="lazy"></li>
 </ul>
 </li>
 <li><p>等待1分钟左右，在浏览器输入<a target="_blank" rel="noopener" href="http://find.synology.com/">http://find.synology.com</a>，即会在局域网内进行搜索正在运行的群晖系统</p>
 </li>
-<li><p>没有问题的话就应该是这样<img src="https://xpenology.com/forum/uploads/monthly_2019_06/obraz.thumb.png.0ceec8eaa3debd80d46c4dceef33291d.png"></p>
+<li><p>没有问题的话就应该是这样<img src="https://xpenology.com/forum/uploads/monthly_2019_06/obraz.thumb.png.0ceec8eaa3debd80d46c4dceef33291d.png" loading="lazy"></p>
 </li>
 <li><p>安装</p>
 <ul>
-<li><p><img src="https://xpenology.com/forum/uploads/monthly_2019_06/obraz.png.b22a7f749cc2280ca9ed5252797be19a.png"></p>
+<li><p><img src="https://xpenology.com/forum/uploads/monthly_2019_06/obraz.png.b22a7f749cc2280ca9ed5252797be19a.png" loading="lazy"></p>
 </li>
-<li><p>需要选择手动安装<img src="https://xpenology.com/forum/uploads/monthly_2019_06/obraz.thumb.png.5a360438a4a0ce42dd3dca2283b11152.png"></p>
+<li><p>需要选择手动安装<img src="https://xpenology.com/forum/uploads/monthly_2019_06/obraz.thumb.png.5a360438a4a0ce42dd3dca2283b11152.png" loading="lazy"></p>
 </li>
-<li><p>将解压后的包内<code>DSM_DS3615xs_15266.pat</code>进行上传<img src="https://xpenology.com/forum/uploads/monthly_2019_06/obraz.thumb.png.7dfff1d1a8a74abd588ff513e1f4c273.png"></p>
+<li><p>将解压后的包内<code>DSM_DS3615xs_15266.pat</code>进行上传<img src="https://xpenology.com/forum/uploads/monthly_2019_06/obraz.thumb.png.7dfff1d1a8a74abd588ff513e1f4c273.png" loading="lazy"></p>
 </li>
 </ul>
 </li>
-<li><p>静静等待<img src="https://xpenology.com/forum/uploads/monthly_2019_06/obraz.thumb.png.5bb4cb5f1d4603468dcd7f63f0077ee3.png"></p>
+<li><p>静静等待<img src="https://xpenology.com/forum/uploads/monthly_2019_06/obraz.thumb.png.5bb4cb5f1d4603468dcd7f63f0077ee3.png" loading="lazy"></p>
 </li>
-<li><p>设置必要信息<img src="https://xpenology.com/forum/uploads/monthly_2019_06/obraz.png.4449788f9ec2a5d869efe1932fd73c8a.png"></p>
+<li><p>设置必要信息<img src="https://xpenology.com/forum/uploads/monthly_2019_06/obraz.png.4449788f9ec2a5d869efe1932fd73c8a.png" loading="lazy"></p>
 </li>
-<li><p>跳过<code>QuickConnect</code>设置（因为这是非官方注册设备的原因无法启用）<img src="https://xpenology.com/forum/uploads/monthly_2019_06/obraz.png.c4c295281eddb0dc047f405db00c1c3f.png"></p>
+<li><p>跳过<code>QuickConnect</code>设置（因为这是非官方注册设备的原因无法启用）<img src="https://xpenology.com/forum/uploads/monthly_2019_06/obraz.png.c4c295281eddb0dc047f405db00c1c3f.png" loading="lazy"></p>
 </li>
-<li><p>全部完成<img src="https://xpenology.com/forum/uploads/monthly_2019_06/obraz.thumb.png.703c3b3470af4e32331b7207ea710dd7.png"></p>
+<li><p>全部完成<img src="https://xpenology.com/forum/uploads/monthly_2019_06/obraz.thumb.png.703c3b3470af4e32331b7207ea710dd7.png" loading="lazy"></p>
 </li>
 </ol>
 <blockquote>
 <p>P.S. 完成后，不妨给你的虚拟机建立一个快照，防止玩坏翻车了还要重来。🤪</p>
 </blockquote>
-</div></article></div></main><footer><div class="paginator"><a href="/2020/01/31/Laravel%E5%90%8C%E6%97%B6%E7%94%9F%E6%88%90Logstash%E6%A0%BC%E5%BC%8F%E6%97%A5%E5%BF%97/" class="prev">上一篇</a><a href="/2019/11/29/%E7%BE%A4%E6%99%96%E7%A1%AC%E7%9B%98%E6%8C%82%E8%BD%BD%E8%AF%BB%E5%8F%96/" class="next">下一篇</a></div><script src="https://utteranc.es/client.js" repo="y-not-u/y-not-u.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script><div class="copyright"><p>© 2016 - 2025 <a href="https://www.vatery.com">Vogan</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script","l6ok4h42je");</script><script defer src="https://cloud.umami.is/script.js" data-website-id="4d516321-c1cf-4643-ad1e-2900a14d72f4"></script></body></html>
+</div><div class="post-tags"><a class="tag-link" href="/tags/synology/">#synology</a><a class="tag-link" href="/tags/esxi/">#esxi</a><a class="tag-link" href="/tags/nas/">#nas</a></div></article></div></main><footer><div class="paginator"><a class="prev" href="/2020/01/31/Laravel%E5%90%8C%E6%97%B6%E7%94%9F%E6%88%90Logstash%E6%A0%BC%E5%BC%8F%E6%97%A5%E5%BF%97/">PREV</a><a class="next" href="/2019/11/29/%E7%BE%A4%E6%99%96%E7%A1%AC%E7%9B%98%E6%8C%82%E8%BD%BD%E8%AF%BB%E5%8F%96/">NEXT</a></div><script src="https://utteranc.es/client.js" repo="y-not-u/y-not-u.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script><div class="copyright"><p>© 2016 - 2026 <a href="https://www.vatery.com">Vogan</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script","l6ok4h42je");</script><script defer src="https://cloud.umami.is/script.js" data-website-id="4d516321-c1cf-4643-ad1e-2900a14d72f4"></script><script>document.addEventListener('DOMContentLoaded', function() {
+    var figures = document.querySelectorAll('figure.highlight');
+    figures.forEach(function(fig) {
+        var btn = document.createElement('button');
+        btn.className = 'copy-btn';
+        btn.type = 'button';
+        btn.innerText = 'Copy';
+        btn.setAttribute('aria-label', 'Copy code to clipboard');
+        btn.addEventListener('click', function() {
+            var code = fig.querySelector('td.code') || fig.querySelector('pre');
+            var text = code ? code.innerText : fig.innerText;
+            navigator.clipboard.writeText(text).then(function() {
+                btn.innerText = 'Copied!';
+                setTimeout(function() { btn.innerText = 'Copy'; }, 2000);
+            });
+        });
+        fig.appendChild(btn);
+    });
+});</script></body></html>

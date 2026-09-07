@@ -1,5 +1,19 @@
-<!DOCTYPE html><html lang="zh-cn,en,default"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Web Extension 之初窥 · 王豆豆的人生旅途</title><meta name="description" content="Web Extension 之初窥 - Vogan"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&amp;display=swap"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://www.vatery.com/atom.xml" title="王豆豆的人生旅途"><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="王豆豆的人生旅途" type="application/atom+xml">
-</head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"><span class="title">王豆豆的人生旅途</span></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/y-not-u" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="mailto:voganwong@hotmail.com" target="_self" class="nav-list-link">MAIL</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">Web Extension 之初窥</h1><div class="post-info space-between"><div>2024年10月21日</div><img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fwww.vatery.com%2F2024%2F10%2F21%2Fchrome-web-extensions-quick-start%2F&amp;labelColor=%23d9e3f0&amp;countColor=%2337d67a&amp;style=flat" alt="visitors"></div><div class="post-content"><p><img src="/2024/10/21/chrome-web-extensions-quick-start/cover.webp" alt="cover"></p>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Web Extension 之初窥 · 王豆豆的人生旅途</title><meta name="description" content="Web Extension 之初窥 - Vogan"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="canonical" href="https://www.vatery.com/2024/10/21/chrome-web-extensions-quick-start/"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&amp;display=swap"><link rel="stylesheet" href="/css/apollo.css"><meta name="description" content="原来开发 Chrome Web Extension 也没有想象中那么难。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web Extension 之初窥">
+<meta property="og:url" content="https://www.vatery.com/2024/10/21/chrome-web-extensions-quick-start/index.html">
+<meta property="og:site_name" content="王豆豆的人生旅途">
+<meta property="og:description" content="原来开发 Chrome Web Extension 也没有想象中那么难。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.vatery.com/favicon.png">
+<meta property="article:published_time" content="2024-10-21T09:26:21.000Z">
+<meta property="article:modified_time" content="2026-09-07T15:12:40.874Z">
+<meta property="article:author" content="Vogan">
+<meta property="article:tag" content="Develop">
+<meta property="article:tag" content="Web Extension">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.vatery.com/favicon.png"><meta name="generator" content="Hexo 8.1.1"><link rel="alternate" href="/atom.xml" title="王豆豆的人生旅途" type="application/atom+xml">
+</head><body><div class="wrap"><header><a class="logo-link" href="/"><img src="/favicon.png" alt="logo"><span class="title">王豆豆的人生旅途</span></a><ul class="nav nav-list"><li class="nav-list-item"><a class="nav-list-link" href="/" target="_self">BLOG</a></li><li class="nav-list-item"><a class="nav-list-link" href="/archives/" target="_self">ARCHIVE</a></li><li class="nav-list-item"><a class="nav-list-link" href="https://github.com/y-not-u" target="_blank">GITHUB</a></li><li class="nav-list-item"><a class="nav-list-link" href="mailto:voganwong@hotmail.com" target="_self">MAIL</a></li><li class="nav-list-item"><a class="nav-list-link" href="/atom.xml" target="_self">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">Web Extension 之初窥</h1><div class="post-info space-between"><div>2024年10月21日</div><img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fwww.vatery.com%2F2024%2F10%2F21%2Fchrome-web-extensions-quick-start%2F&amp;labelColor=%23d9e3f0&amp;countColor=%2337d67a&amp;style=flat" alt="visitors"></div><div class="post-content"><p><img src="/2024/10/21/chrome-web-extensions-quick-start/cover.webp" alt="cover" loading="lazy"></p>
 <p>原来开发 Chrome Web Extension 也没有想象中那么难。</p>
 <span id="more"></span>
 
@@ -7,8 +21,8 @@
 <p>需要理解的关键概念有3个：</p>
 <ul>
 <li><strong>Popup UI:</strong> 当点击扩展按钮时展示的界面</li>
-<li><strong>Content Script：</strong>注入网页，可以和 DOM 元素交互</li>
-<li><strong>Background Script：</strong>在后台运行，处理事件和数据</li>
+<li>**Content Script：**注入网页，可以和 DOM 元素交互</li>
+<li>**Background Script：**在后台运行，处理事件和数据</li>
 </ul>
 <h3 id="Manifest"><a href="#Manifest" class="headerlink" title="Manifest"></a>Manifest</h3><p>这是扩展项目的配置文件，类似于 <code>package.json</code>。浏览器会读取该配置，处理开发者信息、权限管理、版本号等。</p>
 <h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h3><p>最终要打包成一个 Web 扩展需要特别的工具支持。例如 <strong><a target="_blank" rel="noopener" href="https://crxjs.dev/">CRXJS</a></strong> 是一个 Vite 的库，支持 React&#x2F;Vue&#x2F;Solid&#x2F;Vanilla JavaScript 多种框架。你也可以自由选择其他适合的。</p>
@@ -24,4 +38,22 @@
 <li>使用 React&#x2F;Vue 等主流框架都可以开发，使用 TypeScript 也没问题。</li>
 <li>注入网页的元素，特别注意好隔离。使用 ShadownDOM 技术防止和原网页的样式相互影响。</li>
 </ol>
-</div></article></div></main><footer><div class="paginator"><a href="/2024/10/22/what-is-docker-buildx/" class="prev">上一篇</a><a href="/2024/09/24/my-arch-linux-setup/" class="next">下一篇</a></div><script src="https://utteranc.es/client.js" repo="y-not-u/y-not-u.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script><div class="copyright"><p>© 2016 - 2025 <a href="https://www.vatery.com">Vogan</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script","l6ok4h42je");</script><script defer src="https://cloud.umami.is/script.js" data-website-id="4d516321-c1cf-4643-ad1e-2900a14d72f4"></script></body></html>
+</div><div class="post-tags"><a class="tag-link" href="/tags/Web-Extension/">#Web Extension</a><a class="tag-link" href="/tags/Develop/">#Develop</a></div></article></div></main><footer><div class="paginator"><a class="prev" href="/2024/10/22/what-is-docker-buildx/">PREV</a><a class="next" href="/2024/09/24/my-arch-linux-setup/">NEXT</a></div><script src="https://utteranc.es/client.js" repo="y-not-u/y-not-u.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script><div class="copyright"><p>© 2016 - 2026 <a href="https://www.vatery.com">Vogan</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script","l6ok4h42je");</script><script defer src="https://cloud.umami.is/script.js" data-website-id="4d516321-c1cf-4643-ad1e-2900a14d72f4"></script><script>document.addEventListener('DOMContentLoaded', function() {
+    var figures = document.querySelectorAll('figure.highlight');
+    figures.forEach(function(fig) {
+        var btn = document.createElement('button');
+        btn.className = 'copy-btn';
+        btn.type = 'button';
+        btn.innerText = 'Copy';
+        btn.setAttribute('aria-label', 'Copy code to clipboard');
+        btn.addEventListener('click', function() {
+            var code = fig.querySelector('td.code') || fig.querySelector('pre');
+            var text = code ? code.innerText : fig.innerText;
+            navigator.clipboard.writeText(text).then(function() {
+                btn.innerText = 'Copied!';
+                setTimeout(function() { btn.innerText = 'Copy'; }, 2000);
+            });
+        });
+        fig.appendChild(btn);
+    });
+});</script></body></html>
