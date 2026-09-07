@@ -8,9 +8,7 @@ subtitle: "vogan's blog"
 description: '王豆豆的个人博客，生活、工作、见解、分享、思考。'
 keywords: 王豆豆,博客,blog
 author: Vogan
-language:
-- zh-cn
-- en
+language: zh-CN
 timezone: 'Asia/Shanghai'
 
 # URL
@@ -46,11 +44,12 @@ post_asset_folder: true
 marked:
   prependRoot: true
   postAsset: true
+  lazyload: true
 relative_link: false
 future: true
 highlight:
   enable: true
-  line_number: true
+  line_number: false
   auto_detect: false
   tab_replace: ''
 
@@ -67,6 +66,28 @@ index_generator:
 default_category: uncategorized
 category_map:
 tag_map:
+  Linux: linux
+  macOS: macos
+  React: react
+
+# Feed
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content: true
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+
+# Sitemap
+sitemap:
+  path: sitemap.xml
+  rel: false
+  tags: true
+  categories: true
 
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
@@ -102,6 +123,6 @@ theme: apollo
 deploy:
   type: 'git'
   repo: git@github.com:y-not-u/y-not-u.github.io.git
-  branch: main
+  branch: gh-pages
   name: y-not-u
   email: 102951988+y-not-u@users.noreply.github.com

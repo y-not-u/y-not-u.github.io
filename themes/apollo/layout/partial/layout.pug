@@ -1,5 +1,6 @@
 doctype
-html(lang=config.language)
+- var pageLang = Array.isArray(config.language) ? config.language[0] : (config.language || 'zh-CN')
+html(lang=pageLang)
     head
         include head
     body

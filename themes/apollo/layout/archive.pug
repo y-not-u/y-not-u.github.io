@@ -1,5 +1,15 @@
 extends partial/layout
 
+block site_title
+    if is_tag()
+        != page.tag + " · " + config.title
+    else if is_category()
+        != page.category + " · " + config.title
+    else if is_archive()
+        != __('Archive') + " · " + config.title
+    else
+        != config.title
+
 block container
     include mixins/post
     +postList()

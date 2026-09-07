@@ -9,9 +9,13 @@ block description
 
 meta(name="viewport", content="width=device-width, initial-scale=1")
 link(rel="icon", href=url_for(theme.favicon))
+- var canonicalUrl = url.replace(/index\.html$/, '')
+link(rel="canonical", href=canonicalUrl)
+
+link(rel="preconnect", href="https://fonts.googleapis.com")
+link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
 link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap")
 link(rel="stylesheet", href=url_for("css/apollo.css"))
 
-- var xml = config.url + '/atom.xml'
-    link(rel="search", type="application/opensearchdescription+xml", href=xml, title=config.title)
+!= open_graph({twitter_card: 'summary', image: theme.logo || theme.favicon})
     

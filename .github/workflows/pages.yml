@@ -13,28 +13,30 @@ jobs:
   pages:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          # If your repository depends on submodule, please see: https://github.com/actions/checkout
           submodules: recursive
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v2
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
         with:
-          node-version: '16'
-      - name: Cache NPM dependencies
-        uses: actions/cache@v2
+          version: 9.15.3
+
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
         with:
-          path: node_modules
-          key: ${{ runner.OS }}-npm-cache
-          restore-keys: |
-            ${{ runner.OS }}-npm-cache
+          node-version: '20'
+          cache: 'pnpm'
+
       - name: Install Dependencies
-        run: npm install
+        run: pnpm install --frozen-lockfile
+
       - name: Build
-        run: npm run build
+        run: pnpm run build
+
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
